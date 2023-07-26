@@ -1,6 +1,6 @@
 #  Un trieur de fichier avec menu interactif assez simple et basique
 
-# 1. Trier les fichiers de musique
+  1. Trier les fichiers de musique
   2. Trier les fichiers de vidéo
   3. Trier les fichiers de images
   4. Trier les fichiers de documents
