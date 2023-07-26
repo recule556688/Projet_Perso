@@ -66,7 +66,8 @@ EXTENSIONS_ALL = {
     ".torrent": "Fichier_ISO",
     ".jar": "Jar",
     ".html": "Html",
-    ".exe": "executable"
+    ".exe": "executable",
+    ".bat": "executable",
 }
 
 while True:
