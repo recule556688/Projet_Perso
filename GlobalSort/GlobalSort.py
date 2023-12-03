@@ -8,7 +8,7 @@ import logging  # To enable logging of events for debugging
 import shutil  # To perform high-level file operations
 import os  # To interact with the operating system
 
-DIRECTORY_NAMES = { # Map directory names to the correct language
+DIRECTORY_NAMES = {  # Map directory names to the correct language
     "en": {
         "Music": "Music",
         "Videos": "Videos",
@@ -54,7 +54,7 @@ DIRECTORY_NAMES = { # Map directory names to the correct language
 }
 
 
-LOG_MESSAGES = { # Map log messages to the correct language
+LOG_MESSAGES = {  # Map log messages to the correct language
     "en": {
         "dir_not_exist": "The directory {directory} does not exist.",
         "error_moving": "Error moving file {file}: {error}",
@@ -103,7 +103,7 @@ LOG_MESSAGES = { # Map log messages to the correct language
 os_language = locale.getlocale()[0][:2] if locale.getlocale()[0] else "en"
 
 
-logging.basicConfig( # Configure the logging module
+logging.basicConfig(  # Configure the logging module
     filename="file_sorter.log",
     level=logging.INFO,
     format="%(asctime)s - %(message)s",
@@ -122,9 +122,20 @@ undo_stack = []
 # Get the correct log messages based on the OS language (default to English)
 messages = LOG_MESSAGES.get(locale.getlocale()[0][:2], LOG_MESSAGES["en"])
 
-MENU_CHOICE = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"] # List of the menu choices
+MENU_CHOICE = [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+]  # List of the menu choices
 
-EXTENSIONS_MUSIC = { # Dictionary to store the extensions of the Music to be sorted
+EXTENSIONS_MUSIC = {  # Dictionary to store the extensions of the Music to be sorted
     ".mp3": "Musique",
     ".wav": "Musique",
     ".flac": "Musique",
@@ -135,7 +146,7 @@ EXTENSIONS_MUSIC = { # Dictionary to store the extensions of the Music to be sor
     ".aiff": "Musique",
     ".ape": "Musique",
 }
-EXTENSIONS_VIDEO = { # Dictionary to store the extensions of the Videos to be sorted
+EXTENSIONS_VIDEO = {  # Dictionary to store the extensions of the Videos to be sorted
     ".mp4": "Videos",
     ".avi": "Videos",
     ".gif": "Videos",
@@ -144,7 +155,7 @@ EXTENSIONS_VIDEO = { # Dictionary to store the extensions of the Videos to be so
     ".wmv": "Videos",
     ".mov": "Videos",
 }
-EXTENSIONS_IMAGE = { # Dictionary to store the extensions of the Images to be sorted
+EXTENSIONS_IMAGE = {  # Dictionary to store the extensions of the Images to be sorted
     ".bmp": "Images",
     ".png": "Images",
     ".jpg": "Images",
@@ -153,19 +164,23 @@ EXTENSIONS_IMAGE = { # Dictionary to store the extensions of the Images to be so
     ".heic": "Images",
     ".svg": "Images",
 }
-EXTENSIONS_DOCUMENT = { # Dictionary to store the extensions of the Documents to be sorted
-    ".txt": "Documents",
-    ".pptx": "Documents",
-    ".csv": "Documents",
-    ".xls": "Documents",
-    ".odp": "Documents",
-    ".pages": "Documents",
-    ".pdf": "Documents",
-    ".doc": "Documents",
-    ".zip": "Documents",
-    ".docx": "Documents",
-}
-EXTENSIONS_DOWNLOAD = {} # Dictionary to store the extensions of the Download to be sorted
+EXTENSIONS_DOCUMENT = (
+    {  # Dictionary to store the extensions of the Documents to be sorted
+        ".txt": "Documents",
+        ".pptx": "Documents",
+        ".csv": "Documents",
+        ".xls": "Documents",
+        ".odp": "Documents",
+        ".pages": "Documents",
+        ".pdf": "Documents",
+        ".doc": "Documents",
+        ".zip": "Documents",
+        ".docx": "Documents",
+    }
+)
+EXTENSIONS_DOWNLOAD = (
+    {}
+)  # Dictionary to store the extensions of the Download to be sorted
 EXTENSIONS_DOWNLOAD.update(EXTENSIONS_DOCUMENT)
 EXTENSIONS_DOWNLOAD.update(EXTENSIONS_IMAGE)
 EXTENSIONS_DOWNLOAD.update(EXTENSIONS_VIDEO)
@@ -190,85 +205,85 @@ EXTENSIONS_DOWNLOAD.update(
 )
 
 
-def generate_menu(language): # Function to generate the menu in the correct language
+def generate_menu(language):  # Function to generate the menu in the correct language
     menu_options = {
         "fr": [
             "OPTIONS DE MENU:",
-            "1. Trier les fichiers de musique",
-            "2. Trier les fichiers de vidéo",
-            "3. Trier les fichiers de images",
-            "4. Trier les fichiers de documents",
-            "5. Trier les fichiers de download",
-            "6. Trier les fichiers d'un dossier spécifique",
-            "7. Trier tous les répertoires",
-            "8. Annuler la dernière opération",
-            "9. Quitter le programme",
-            "10. Afficher le menu d'aide",
+            "1 - Trier les fichiers de musique",
+            "2 - Trier les fichiers de vidéo",
+            "3 - Trier les fichiers de images",
+            "4 - Trier les fichiers de documents",
+            "5 - Trier les fichiers de download",
+            "6 - Trier les fichiers d'un dossier spécifique",
+            "7 - Trier tous les répertoires",
+            "8 - Annuler la dernière opération",
+            "9 - Quitter le programme",
+            "10 - Afficher le menu d'aide",
         ],
         "en": [
             "MENU OPTIONS:",
-            "1. Sort music files",
-            "2. Sort video files",
-            "3. Sort image files",
-            "4. Sort document files",
-            "5. Sort download files",
-            "6. Sort files from a specific directory",
-            "7. Sort all directories",
-            "8. Undo last operation",
-            "9. Quit the program",
-            "10. Display help menu",
+            "1 - Sort music files",
+            "2 - Sort video files",
+            "3 - Sort image files",
+            "4 - Sort document files",
+            "5 - Sort download files",
+            "6 - Sort files from a specific directory",
+            "7 - Sort all directories",
+            "8 - Undo last operation",
+            "9 - Quit the program",
+            "10 - Display help menu",
         ],
         "es": [
             "OPCIONES DE MENÚ:",
-            "1. Ordenar archivos de música",
-            "2. Ordenar archivos de video",
-            "3. Ordenar archivos de imágenes",
-            "4. Ordenar archivos de documentos",
-            "5. Ordenar archivos de descarga",
-            "6. Ordenar archivos de un directorio específico",
-            "7. Ordenar todos los directorios",
-            "8. Deshacer la última operación",
-            "9. Salir del programa",
-            "10. Mostrar el menú de ayuda",
+            "1 - Ordenar archivos de música",
+            "2 - Ordenar archivos de video",
+            "3 - Ordenar archivos de imágenes",
+            "4 - Ordenar archivos de documentos",
+            "5 - Ordenar archivos de descarga",
+            "6 - Ordenar archivos de un directorio específico",
+            "7 - Ordenar todos los directorios",
+            "8 - Deshacer la última operación",
+            "9 - Salir del programa",
+            "10 - Mostrar el menú de ayuda",
         ],
         "it": [
             "OPZIONI MENU:",
-            "1. Ordina i file musicali",
-            "2. Ordina i file video",
-            "3. Ordina i file immagine",
-            "4. Ordina i file di documento",
-            "5. Ordina i file di download",
-            "6. Ordina i file da una directory specifica",
-            "7. Ordina tutte le directory",
-            "8. Annulla l'ultima operazione",
-            "9. Esci dal programma",
-            "10. Visualizza il menu di aiuto",
+            "1 - Ordina i file musicali",
+            "2 - Ordina i file video",
+            "3 - Ordina i file immagine",
+            "4 - Ordina i file di documento",
+            "5 - Ordina i file di download",
+            "6 - Ordina i file da una directory specifica",
+            "7 - Ordina tutte le directory",
+            "8 - Annulla l'ultima operazione",
+            "9 - Esci dal programma",
+            "10 - Visualizza il menu di aiuto",
         ],
         "de": [
             "MENÜOPTIONEN:",
-            "1. Musikdateien sortieren",
-            "2. Videodateien sortieren",
-            "3. Bilddateien sortieren",
-            "4. Dokumentdateien sortieren",
-            "5. Download-Dateien sortieren",
-            "6. Dateien aus einem bestimmten Verzeichnis sortieren",
-            "7. Alle Verzeichnisse sortieren",
-            "8. Letzte Operation rückgängig machen",
-            "9. Programm beenden",
-            "10. Hilfe-Menü anzeigen",
+            "1 - Musikdateien sortieren",
+            "2 - Videodateien sortieren",
+            "3 - Bilddateien sortieren",
+            "4 - Dokumentdateien sortieren",
+            "5 - Download-Dateien sortieren",
+            "6 - Dateien aus einem bestimmten Verzeichnis sortieren",
+            "7 - Alle Verzeichnisse sortieren",
+            "8 - Letzte Operation rückgängig machen",
+            "9 - Programm beenden",
+            "10 - Hilfe-Menü anzeigen",
         ],
         "ru": [
             "ОПЦИИ МЕНЮ:",
-            "1. Сортировать музыкальные файлы",
-            "2. Сортировать видео файлы",
-            "3. Сортировать файлы изображений",
-            "4. Сортировать документы",
-            "5. Сортировать файлы для скачивания",
-            "6. Сортировать файлы из определенного каталога",
-            "7. Сортировать все каталоги",
-            "8. Отменить последнюю операцию",
-            "9. Выйти из программы",
-            "10. Показать меню помощи",
+            "1 - Сортировать музыкальные файлы",
+            "2 - Сортировать видео файлы",
+            "3 - Сортировать файлы изображений",
+            "4 - Сортировать документы",
+            "5 - Сортировать файлы для скачивания",
+            "6 - Сортировать файлы из определенного каталога",
+            "7 - Сортировать все каталоги",
+            "8 - Отменить последнюю операцию",
+            "9 - Выйти из программы",
+            "10 - Показать меню помощи",
         ],
     }
 
@@ -290,7 +305,7 @@ def generate_menu(language): # Function to generate the menu in the correct lang
         f"{colors[i%len(colors)]}{option.center(100)}\033[0m"
         for i, option in enumerate(menu_options.get(language, menu_options["en"]))
     )
-    return f"\033[1;34m{'-'*100}\033[0m\n{menu}\n\033[1;34m{'-'*100}\033[0m\n{'↪ Your Choice : '.center(100)}"
+    return f"\033[1;34m{'-'*100}\033[0m\n{menu}\n\033[1;34m{'-'*100}\033[0m\n\033[1;32m{'↪ Your Choice : '.center(100)}\033[0m"
 
 
 def display_help_fr():  # function to display the help menu in French
@@ -457,78 +472,78 @@ def display_help_ru():  # Function to display the help menu in Russian
     )
 
 
-def sort_files(directory, extensions): # Function to sort files
+def sort_files(directory, extensions, sorted):  # Add sorted as an argument
+    sorted_folders = set()  # Set to keep track of the sorted folders
     if not directory.exists():
-        print(
-            "\033[1;34m{}\n\033[1;31m{}\033[0m".format(
-                "-" * 100,
-                messages["dir_not_exist"].format(directory=directory).center(100),
-            )
-        )
-        return
+        return (
+            sorted,
+            sorted_folders,
+        )  # Return sorted and sorted_folders if the directory does not exist
 
     files = [f for f in directory.iterdir() if f.is_file()]
     for file in files:
         dossier_cible = extensions.get(file.suffix.lower(), "Divers")
         dossier_cible_absolu = directory / dossier_cible
-        dossier_cible_absolu.mkdir(exist_ok=True)
         fichier_cible = dossier_cible_absolu / file.name
-        try:
-            file.rename(fichier_cible)
-            undo_stack.append((fichier_cible, file))
-            logging.info(
-                "\033[1;34m{}\n\033[1;32m{}\033[0m".format(
-                    "-" * 100,
-                    messages["moved"].format(src=file, dst=fichier_cible).center(100),
-                )
-            )
-        except Exception as e:
-            print(
-                "\033[1;34m{}\n\033[1;31m{}\033[0m".format(
-                    "-" * 100,
-                    messages["error_moving"]
-                    .format(file=file.name, error=e)
-                    .center(100),
-                )
-            )
-            logging.error(
-                "\033[1;34m{}\n\033[1;31m{}\033[0m".format(
-                    "-" * 100,
-                    messages["error_moving"].format(file=file, error=e).center(100),
-                )
-            )
+        if (
+            file.parent != dossier_cible_absolu
+        ):  # Check if the file is not in the correct folder
+            try:
+                file.rename(fichier_cible)
+                undo_stack.append((fichier_cible, file))
+                sorted = True  # Set the flag to True if a file has been moved
+                sorted_folders.add(
+                    str(dossier_cible_absolu)
+                )  # Add the folder to the sorted folders set
+            except Exception as e:
+                print(
+                    f"Exception when moving file: {e}"
+                )  # Print the exception if one is thrown
 
-    clear_console()
-    print(
-        "\033[1;34m{}\n\033[1;34m{}\033[0m".format(
-            "-" * 100, messages["file_sorted"].format(directory=directory).center(100)
+    return sorted, sorted_folders  # Return the sorted flag and the sorted folders
+
+
+def undo_all_operations():  # Function to undo all operations
+    if not undo_stack:
+        print("\033[1;34m{}\033[0m".format("-" * 100))
+        print(
+            "\033[1;33m{}\033[0m".format("There is no operation to cancel.".center(100))
         )
-    )
-
-
-def undo_all_operations(): # Function to undo all operations
+        return
     while undo_stack:
         undo_last_operation()
 
 
-def undo_last_operation(): # Function to undo the last operation
+def undo_last_operation():  # Function to undo the last operation
     global undo_stack  # Use the global undo_stack
     global messages  # Use the global messages
 
     if undo_stack:
         src, dst = undo_stack.pop()
-        shutil.move(src, dst)
-        logging.info(messages["moved"].format(src=src, dst=dst))
+        if os.path.exists(src):  # Check if the source file exists
+            shutil.move(src, dst)
+            print(
+                f"\033[1;32m{'Successfully moved {src} back to {dst}'.center(100)}\033[0m"
+            )  # Print a success message in green
+            logging.info(messages["moved"].format(src=src, dst=dst))
+        else:
+            print(
+                f"\033[1;31m{'File {src} does not exist.'.center(100)}\033[0m"
+            )  # Print an error message in red
     else:
-        print(messages["no_operation_to_cancel"])
+        print(
+            f"\033[1;33m{messages['no_operation_to_cancel'].center(100)}\033[0m"
+        )  # Print a warning message in yellow
         return
 
 
-def clear_console(): # Function to clear the console
+def clear_console():  # Function to clear the console
     os.system("cls" if os.name == "nt" else "clear")
 
 
-def main(): # Main function
+def main():  # Main function
+    sorted = False  # Flag to keep track if any file has been moved
+    sorted_folders = set()  # Set to keep track of the sorted folders
     while True:
         if os_language == "fr":
             user_choice = input(generate_menu("fr"))
@@ -544,7 +559,7 @@ def main(): # Main function
             user_choice = input(generate_menu("ru"))
         else:
             user_choice = input(
-                MENU_en
+                generate_menu("en")
             )  # default to English if language is not recognized
             print("--" * 50)
         if user_choice not in MENU_CHOICE:
@@ -595,24 +610,105 @@ def main(): # Main function
             print("\033[1;34m" + "-" * 100 + "\033[0m")
             continue
         if user_choice == "1":  # Sort music files
-            sort_files(Path.home() / directories_name["Music"], EXTENSIONS_MUSIC)
+            sorted, new_folders = sort_files(
+                Path.home() / directories_name["Music"], EXTENSIONS_MUSIC, sorted
+            )
+            clear_console()
+            sorted_folders.update(new_folders)
         elif user_choice == "2":  # Sort video files
-            sort_files(Path.home() / directories_name["Videos"], EXTENSIONS_VIDEO)
+            sorted, new_folders = sort_files(
+                Path.home() / directories_name["Videos"], EXTENSIONS_VIDEO, sorted
+            )
+            clear_console()
+            sorted_folders.update(new_folders)
         elif user_choice == "3":  # Sort image files
-            sort_files(Path.home() / directories_name["Images"], EXTENSIONS_IMAGE)
+            sorted, new_folders = sort_files(
+                Path.home() / directories_name["Images"], EXTENSIONS_IMAGE, sorted
+            )
+            clear_console()
+            sorted_folders.update(new_folders)
         elif user_choice == "4":  # Sort document files
-            sort_files(Path.home() / directories_name["Documents"], EXTENSIONS_DOCUMENT)
+            sorted, new_folders = sort_files(
+                Path.home() / directories_name["Documents"], EXTENSIONS_DOCUMENT, sorted
+            )
+            clear_console()
+            sorted_folders.update(new_folders)
         elif user_choice == "5":  # Sort download files
-            sort_files(Path.home() / directories_name["Downloads"], EXTENSIONS_DOWNLOAD)
+            sorted, new_folders = sort_files(
+                Path.home() / directories_name["Downloads"], EXTENSIONS_DOWNLOAD, sorted
+            )
+            clear_console()
+            sorted_folders.update(new_folders)
         elif user_choice == "6":  # Sort a specific folder
-            Custom_DIR = Path(input("Entrer le chemin du dossier ? "))
-            sort_files(Custom_DIR, EXTENSIONS_DOWNLOAD)
+            try:
+                print("\033[1;34m{}\033[0m".format("-" * 100))
+                Custom_DIR = Path(
+                    input(
+                        "\033[1;34m{}\033[0m".format(
+                            "Enter the path of the folder? ".center(100, " ")
+                        )
+                    )
+                )
+                if not Custom_DIR.exists():
+                    print("\033[1;34m{}\033[0m".format("-" * 100))
+                    print(
+                        "\033[1;31m{}\033[0m".format(
+                            "The specified path does not exist.".center(100, " ")
+                        )
+                    )
+                    print("\033[1;34m{}\033[0m".format("-" * 100))
+                    return
+                sorted, new_folders = sort_files(
+                    Custom_DIR, EXTENSIONS_DOWNLOAD, sorted
+                )
+                clear_console()
+                sorted_folders.update(new_folders)
+            except Exception as e:
+                print(f"\033[1;31mAn error occurred: {e}\033[0m")
         elif user_choice == "7":  # Sort all the directories
-            sort_files(Path.home() / directories_name["Music"], EXTENSIONS_MUSIC)
-            sort_files(Path.home() / directories_name["Videos"], EXTENSIONS_VIDEO)
-            sort_files(Path.home() / directories_name["Images"], EXTENSIONS_IMAGE)
-            sort_files(Path.home() / directories_name["Documents"], EXTENSIONS_DOCUMENT)
-            sort_files(Path.home() / directories_name["Downloads"], EXTENSIONS_DOWNLOAD)
+            sorted, new_folders = sort_files(
+                Path.home() / directories_name["Music"], EXTENSIONS_MUSIC, sorted
+            )
+            clear_console()
+            sorted_folders.update(new_folders)
+            sorted, new_folders = sort_files(
+                Path.home() / directories_name["Videos"], EXTENSIONS_VIDEO, sorted
+            )
+            clear_console()
+            sorted_folders.update(new_folders)
+            sorted, new_folders = sort_files(
+                Path.home() / directories_name["Images"], EXTENSIONS_IMAGE, sorted
+            )
+            clear_console()
+            sorted_folders.update(new_folders)
+            sorted, new_folders = sort_files(
+                Path.home() / directories_name["Downloads"], EXTENSIONS_DOWNLOAD, sorted
+            )
+            clear_console()
+            sorted_folders.update(new_folders)
+            sorted, new_folders = sort_files(
+                Path.home() / directories_name["Documents"], EXTENSIONS_DOCUMENT, sorted
+            )
+            clear_console()
+            sorted_folders.update(new_folders)
+            if sorted:  # Only print if any file has been moved
+                clear_console()
+                for folder in sorted_folders:
+                    print(
+                        "\033[1;34m{}\n\033[1;34m{}\033[0m".format(
+                            "-" * 100,
+                            messages["file_sorted"]
+                            .format(directory=folder)
+                            .center(100),
+                        )
+                    )
+            else:  # Print a different message if no files have been moved
+                clear_console()
+                print(
+                    "\033[1;34m{}\n\033[1;31m{}\033[0m".format(
+                        "-" * 100, "No files were moved.".center(100)
+                    )
+                )
         elif user_choice == "8":  # Revert the changes
             clear_console()
             undo_all_operations()
@@ -690,5 +786,5 @@ def main(): # Main function
             continue
 
 
-if __name__ == "__main__": # Run the main function
+if __name__ == "__main__":  # Run the main function
     main()
