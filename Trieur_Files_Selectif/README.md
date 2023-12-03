@@ -1,114 +1,103 @@
-<p align="center">
-  <a href="" rel="noopener">
- <img width=200px height=200px src="https://i.imgur.com/6wj0hh6.jpg" alt="Project logo"></a>
-</p>
+# File Sorter with Interactive Menu
 
-<h3 align="center">Project Title</h3>
+A simple and basic tool for sorting your files.
 
-<div align="center">
+## Table of Contents
+- [Features](#features)
+- [Supported Extensions](#supported-extensions)
+  - [Music](#music)
+  - [Video](#video)
+  - [Image](#image)
+  - [Document](#document)
+  - [Download](#download)
+- [Supported Languages](#supported-languages)
 
-[![Status](https://img.shields.io/badge/status-active-success.svg)]()
-[![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/issues)
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/pulls)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
+## Features
+This tool allows you to:
+- Sort music files
+- Sort video files
+- Sort image files
+- Sort document files
+- Sort download files
+- Sort files from a specific directory
+- Sort all directories
+- Undo last operation
+- Quit the program
 
-</div>
+## Supported Extensions
 
----
+### Music
+Supported music file extensions include:
+- .mp3
+- .wav
+- .flac
+- .ogg
+- .wma
+- .m4a
+- .aac
+- .aiff
+- .ape
 
-<p align="center"> Few lines describing your project.
-    <br>
-</p>
+### Video
+Supported video file extensions include:
+- .mp4
+- .avi
+- .gif
+- .mkv
+- .wmv
+- .mov
 
-## 📝 Table of Contents
+### Image
+Supported image file extensions include:
+- .bmp
+- .png
+- .jpg
+- .jpeg
+- .heic
+- .svg
 
-- [About](#about)
-- [Getting Started](#getting_started)
-- [Deployment](#deployment)
-- [Usage](#usage)
-- [Built Using](#built_using)
-- [TODO](../TODO.md)
-- [Contributing](../CONTRIBUTING.md)
-- [Authors](#authors)
-- [Acknowledgments](#acknowledgement)
+### Document
+Supported document file extensions include:
+- .txt
+- .pptx
+- .csv
+- .xls
+- .odp
+- .pages
+- .pdf
+- .doc
+- .zip
+- .docx
 
-## 🧐 About <a name = "about"></a>
+### Download
+Supported download file extensions include all the extensions mentioned above and:
+- .exe
+- .bat
+- .sh
+- .py
+- .pyw
+- .msi
+- .apk
+- .app
+- .deb
+- .rpm
+- .bin
+- .dmg
+- .run
+- .jar
 
-Write about 1-2 paragraphs describing the purpose of your project.
+## Supported Languages
+The program currently supports the following languages:
+- English
+- French
+- Spanish
+- German
+- Italian
 
-## 🏁 Getting Started <a name = "getting_started"></a>
+We are constantly working to add more languages to this list.
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
+## What's New
 
-### Prerequisites
-
-What things you need to install the software and how to install them.
-
-```
-Give examples
-```
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running.
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo.
-
-## 🔧 Running the tests <a name = "tests"></a>
-
-Explain how to run the automated tests for this system.
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## 🎈 Usage <a name="usage"></a>
-
-Add notes about how to use the system.
-
-## 🚀 Deployment <a name = "deployment"></a>
-
-Add additional notes about how to deploy this on a live system.
-
-## ⛏️ Built Using <a name = "built_using"></a>
-
-- [MongoDB](https://www.mongodb.com/) - Database
-- [Express](https://expressjs.com/) - Server Framework
-- [VueJs](https://vuejs.org/) - Web Framework
-- [NodeJs](https://nodejs.org/en/) - Server Environment
-
-## ✍️ Authors <a name = "authors"></a>
-
-- [@kylelobo](https://github.com/kylelobo) - Idea & Initial work
-
-See also the list of [contributors](https://github.com/kylelobo/The-Documentation-Compendium/contributors) who participated in this project.
-
-## 🎉 Acknowledgements <a name = "acknowledgement"></a>
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- References
+- Support for new file extensions
+- Multilingual support
+- Integrated test management to ensure code quality
