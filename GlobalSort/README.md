@@ -1,47 +1,38 @@
-<p align="center">
-  <a href="" rel="noopener">
- <img width=200px height=144px src="https://github.com/recule556688/Projet_Perso/blob/main/GlobalSort/Assets/logo.png?raw=true" alt="Project logo"></a>
-</p>
+# 🌍 GlobalSort
 
-<h3 align="center">🌍 GlobalSort</h3>
-
-<div align="center">
-
-[![Status](https://img.shields.io/badge/status-active-success.svg)]()
+[![Status](https://img.shields.io/badge/status-active-success.svg)](placeholder)
 [![GitHub Issues](https://img.shields.io/github/issues/recule556688/Projet_Perso)](https://github.com/recule556688/Projet_Perso/issues)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
 [![DeepSource](https://app.deepsource.com/gh/recule556688/Projet_Perso.svg/?label=active+issues&show_trend=true&token=lfgj4HrvZJ4AkB9HGLVVa6K7)](https://app.deepsource.com/gh/recule556688/Projet_Perso/)
 [![DeepSource](https://app.deepsource.com/gh/recule556688/Projet_Perso.svg/?label=resolved+issues&show_trend=true&token=lfgj4HrvZJ4AkB9HGLVVa6K7)](https://app.deepsource.com/gh/recule556688/Projet_Perso/)
 
-</div>
-
 ---
 
-<p align="center"> 🗂️ GlobalSort is a Python-based utility tool designed to organize files in your computer's directories...
+🗂️ GlobalSort is a Python-based utility tool designed to organize files in your computer's directories...
 
-# 📚 Table of Contents
+## 📚 Table of Contents
 
-- [About](#about)
-- [Getting Started](#getting-started)
-- [Features](#features)
+- [📖 About](#about)
+- [🚀 Getting Started](#getting-started)
+- [🌟 Features](#features)
 - [Supported Extensions](#supported-extensions)
 - [Supported Languages](#supported-languages)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Built With](#built-with)
+- [Built Using](#built-using)
 - [Authors](#authors)
 - [License](#license)
 
-# 📖 About
+## 📖 About
 
 "GlobalSort is my first project developed in Python. I decided to create this powerful file organization tool as a means to learn Python and simultaneously find a solution to organize my files efficiently."
 
-# 🚀 Getting Started
+## 🚀 Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine.
 
-# 🌟 Features
+## 🌟 Features
 
 This tool allows you to:
 
@@ -53,10 +44,10 @@ This tool allows you to:
 - Sort files from a specific directory
 - Sort all directories
 - Undo last operation
-- Display an helping menu
+- Display a helping menu
 - Quit the program
 
-# Supported Extensions
+## Supported Extensions
 
 ### Music 🎵
 
@@ -78,9 +69,9 @@ This tool allows you to:
 
 - All the extensions mentioned above and:
 
-   .exe, .bat, .sh, .py, .pyw, .msi, .apk, .app, .deb, .rpm, .bin, .dmg, .run, .jar
+    .exe, .bat, .sh, .py, .pyw, .msi, .apk, .app, .deb, .rpm, .bin, .dmg, .run, .jar
 
-# Supported Languages 🌐
+## Supported Languages 🌐
 
 The program currently supports the following languages:
 
@@ -90,68 +81,9 @@ The program currently supports the following languages:
 - 🇩🇪 German
 - 🇮🇹 Italian
 
-# Installation
+## Installation
 
-## Prerequisites
+### Prerequisites
 
 - Git. You can download Git from its [official website](https://git-scm.com/downloads).
 - Python 3.6 or higher. You can download Python from the [official website](https://www.python.org/downloads/).
-
-```py
-import sys  # To interact with the Python interpreter
-import locale  # To set the locale for your program
-import logging  # To enable logging of events for debugging
-import shutil  # To perform high-level file operations
-import os  # To interact with the operating system
-from pathlib import Path # For handling filesystem paths in a way that is compatible with all OS
-```
-
-## Installation guide
-
-```bash
-# Clone the repo
-git clone https://github.com/recule556688/Projet_Perso.git
-
-# Go into the repo
-cd GlobalSort
-```
-
-## Run the Program
-
-```py
-python GlobalSort.py
-```
-
-## 🔧 Running the tests <a name = "tests"></a>
-
-### Run tests
-
-```py
-python -m unittest test_GlobalSort.py
-```
-
-# 🎈 Usage <a name="usage"></a>
-
-### Run the program with the following command
-
-```py
-python GlobalSort.py
-```
-
-A graphical user interface (GUI) will appear in your terminal. Here's how to navigate it:
-
-- **Use the numpad for quick navigation**: GlobalSort supports numpad inputs. For example:
-  - Press '1' on your numpad and then 'Enter' to select the first option.
-  - Select the '10' option to display the help menu.
-
-Remember to press **'Enter'** after your selection.
-
-![Usage Example](https://github.com/recule556688/Projet_Perso/blob/main/GlobalSort/Assets/usage.gif?raw=true)
-
-## ⛏️ Built Using <a name = "built_using"></a>
-
-- <img src="https://img.icons8.com/color/30/000000/python.png">[Python](https://www.python.org/) - Language
-
-## ✍️ Authors <a name = "authors"></a>
-
-- [@recule556688](https://github.com/recule556688) - Idea & Initial work
