@@ -626,13 +626,17 @@ def main():  # Main function
             sorted_folders.update(new_folders)
         elif user_choice == "4":  # Sort document files
             sorted_flag, new_folders = sort_files(
-                Path.home() / directories_name["Documents"], EXTENSIONS_DOCUMENT, sorted_flag
+                Path.home() / directories_name["Documents"],
+                EXTENSIONS_DOCUMENT,
+                sorted_flag,
             )
             clear_console()
             sorted_folders.update(new_folders)
         elif user_choice == "5":  # Sort download files
             sorted_flag, new_folders = sort_files(
-                Path.home() / directories_name["Downloads"], EXTENSIONS_DOWNLOAD, sorted_flag
+                Path.home() / directories_name["Downloads"],
+                EXTENSIONS_DOWNLOAD,
+                sorted_flag,
             )
             clear_console()
             sorted_folders.update(new_folders)
@@ -679,12 +683,16 @@ def main():  # Main function
             clear_console()
             sorted_folders.update(new_folders)
             sorted_flag, new_folders = sort_files(
-                Path.home() / directories_name["Downloads"], EXTENSIONS_DOWNLOAD, sorted_flag
+                Path.home() / directories_name["Downloads"],
+                EXTENSIONS_DOWNLOAD,
+                sorted_flag,
             )
             clear_console()
             sorted_folders.update(new_folders)
             sorted_flag, new_folders = sort_files(
-                Path.home() / directories_name["Documents"], EXTENSIONS_DOCUMENT, sorted_flag
+                Path.home() / directories_name["Documents"],
+                EXTENSIONS_DOCUMENT,
+                sorted_flag,
             )
             clear_console()
             sorted_folders.update(new_folders)
