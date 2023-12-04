@@ -1,7 +1,11 @@
-<h1 align="left">Projet_Perso</h1>
-<p align="left">
+<h1 align="center">Projet_Perso</h1>
+<p align="center">
   <img src="./.github/karma.png" width="500" height="250" alt="Projet_Perso">
 </p>
+
+<table align="center">
+  <tr>
+    <td>
 
 ![Github top language](https://img.shields.io/github/languages/top/recule556688/projet_perso?color=56BEB8)
 ![Github language count](https://img.shields.io/github/languages/count/recule556688/projet_perso?color=56BEB8)
@@ -10,8 +14,10 @@
 ![Github issues](https://img.shields.io/github/issues/recule556688/projet_perso?color=56BEB8)
 ![Github forks](https://img.shields.io/github/forks/recule556688/projet_perso?color=56BEB8)
 ![Github stars](https://img.shields.io/github/stars/recule556688/projet_perso?color=56BEB8)
+  </tr>
+</table>
 
-<div align="center" style="display: flex; align-items: center; justify-content: left; height: 5vh;">
+<div align="center" style="display: flex; align-items: center; justify-content: center;">
 <p>
 <a href="#about">About</a> |
 <a href="#projects">Projects</a> |
