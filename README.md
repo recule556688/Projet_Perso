@@ -1,5 +1,5 @@
-<h1 align="center">Projet_Perso</h1>
-<p align="center">
+<h1 align="left">Projet_Perso</h1>
+<p align="left">
   <img src="./.github/karma.png" width="500" height="250" alt="Projet_Perso">
 </p>
 
@@ -11,7 +11,7 @@
 ![Github forks](https://img.shields.io/github/forks/recule556688/projet_perso?color=56BEB8)
 ![Github stars](https://img.shields.io/github/stars/recule556688/projet_perso?color=56BEB8)
 
-<div align="center" style="display: flex; align-items: center; justify-content: center; height: 10vh;">
+<div align="center" style="display: flex; align-items: center; justify-content: left; height: 5vh;">
 <p>
 <a href="#about">About</a> |
 <a href="#projects">Projects</a> |
