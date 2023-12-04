@@ -515,7 +515,6 @@ def undo_all_operations():  # Function to undo all operations
 
 
 def undo_last_operation():  # Function to undo the last operation
-
     if undo_stack:
         src, dst = undo_stack.pop()
         if os.path.exists(src):  # Check if the source file exists
