@@ -6,20 +6,24 @@
 ![Github top language](https://img.shields.io/github/languages/top/recule556688/projet_perso?color=56BEB8)
 ![Github language count](https://img.shields.io/github/languages/count/recule556688/projet_perso?color=56BEB8)
 ![Repository size](https://img.shields.io/github/repo-size/recule556688/projet_perso?color=56BEB8)
-![License](https://img.shields.io/github/license/recule556688/projet_perso?color=56BEB8)
+[![License: MIT](https://img.shields.io/badge/License-MIT-56BEB8.svg)](https://github.com/recule556688/Projet_Perso/blob/main/LICENSE)
 ![Github issues](https://img.shields.io/github/issues/recule556688/projet_perso?color=56BEB8)
 ![Github forks](https://img.shields.io/github/forks/recule556688/projet_perso?color=56BEB8)
 ![Github stars](https://img.shields.io/github/stars/recule556688/projet_perso?color=56BEB8)
 
-- [About](#about)
-- [Projects](#projects)
-- [Technologies](#technologies)
-- [License](#license)
-- [Author](https://github.com/recule556688)
+<div align="center" style="display: flex; align-items: center; justify-content: center; height: 10vh;">
+<p>
+<a href="#about">About</a> |
+<a href="#projects">Projects</a> |
+<a href="#technologies">Technologies</a> |
+<a href="#license">License</a> |
+<a href="https://github.com/recule556688">Author</a>
+</p>
+</div>
 
 ## 📌 About
 
-Welcome to my personal project repository! Here, you'll find a collection of projects that I've developed during my time at Epitech in Lyon, France. These projects showcase my skills and interests in software development.
+Welcome to my repository of personal projects, developed during my tenure in France at [Epitech](https://www.epitech.eu/), Lyon. This collection demonstrates my software development skills and interests.
 
 ## ✨ Projects
 
@@ -35,7 +39,7 @@ YoutubeDownloader is a user-friendly YouTube video downloader. Built with Python
 
 ### The following librairies were used in these projects:
 
-The following tools were used in the [Project 1: GlobalSort](#project-1-globalsort)
+The following tools were used in the [GlobalSort](#globalsort)
 
 - 🐍 [Python](https://www.python.org/)
 - 📦 [Shutil](https://docs.python.org/3/library/shutil.html)
@@ -43,7 +47,7 @@ The following tools were used in the [Project 1: GlobalSort](#project-1-globalso
 - 📝 [Logging](https://docs.python.org/3/library/logging.html)
 - 🌐 [Locale](https://docs.python.org/3/library/locale.html)
 
-The following tools were used in the [Project 2: YoutubeDownloader](#project-2-youtubedownloader):
+The following tools were used in the [YoutubeDownloader](#youtubedownloader)
 
 - 🐍 [Python](https://www.python.org/)
 - 📺 [Pytube](https://pypi.org/project/pytube/)
