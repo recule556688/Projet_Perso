@@ -515,8 +515,6 @@ def undo_all_operations():  # Function to undo all operations
 
 
 def undo_last_operation():  # Function to undo the last operation
-    global undo_stack  # Use the global undo_stack
-    global messages  # Use the global messages
 
     if undo_stack:
         src, dst = undo_stack.pop()
