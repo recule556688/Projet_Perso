@@ -70,6 +70,10 @@ On Windows:
 
 ```bash
 .\env\Scripts\activate
+
+# or sometimes you need to use this command:
+
+source env/bin/activate
 ```
 
 On Unix or MacOS:
