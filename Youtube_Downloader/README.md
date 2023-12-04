@@ -24,6 +24,7 @@
 - [📋 Prerequisites](#prerequisites)
 - [🔧 Installing](#installing)
 - [🎬 Usage](#usage)
+- [📝 License](#license)
 
 ## 📖 About <a name = "about"></a>
 
@@ -119,3 +120,10 @@ python yt_downloader.py # The Graphical User Interface will be launched
 ```python
 python yt_downloader.py  # now copy paste a valid YouTube link in the GUI
 ```
+### 📝 License
+
+This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
+
+Made with ❤️ by [Karma](https://github.com/recule556688)
+
+[Back to top](#top)

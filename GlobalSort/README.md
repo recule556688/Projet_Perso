@@ -22,7 +22,7 @@
 - [Usage](#usage)
 - [Built Using](#built-using)
 - [Authors](#authors)
-- [License](#license)
+- [📝 License](#license)
 
 ## 📖 About
 
@@ -87,3 +87,11 @@ The program currently supports the following languages:
 
 - Git. You can download Git from its [official website](https://git-scm.com/downloads).
 - Python 3.6 or higher. You can download Python from the [official website](https://www.python.org/downloads/).
+
+## 📝 License
+
+This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
+
+Made with ❤️ by [Karma](https://github.com/recule556688)
+
+[Back to top](#top)
