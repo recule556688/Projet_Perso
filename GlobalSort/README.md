@@ -2,7 +2,7 @@
 
 [![Status](https://img.shields.io/badge/status-active-success.svg)](placeholder)
 [![GitHub Issues](https://img.shields.io/github/issues/recule556688/Projet_Perso)](https://github.com/recule556688/Projet_Perso/issues)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-56BEB8.svg)](https://github.com/recule556688/Projet_Perso/blob/main/LICENSE)
 
 [![DeepSource](https://app.deepsource.com/gh/recule556688/Projet_Perso.svg/?label=active+issues&show_trend=true&token=lfgj4HrvZJ4AkB9HGLVVa6K7)](https://app.deepsource.com/gh/recule556688/Projet_Perso/)
 [![DeepSource](https://app.deepsource.com/gh/recule556688/Projet_Perso.svg/?label=resolved+issues&show_trend=true&token=lfgj4HrvZJ4AkB9HGLVVa6K7)](https://app.deepsource.com/gh/recule556688/Projet_Perso/)
