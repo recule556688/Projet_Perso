@@ -23,6 +23,8 @@ app = CTk()
 app.geometry(WINDOW_GEOMETRY)
 app.title("YouTube Downloader")
 
+
+# Download function
 def startDownload():
     try:
         # Disable the download button
@@ -105,17 +107,14 @@ def on_progress(stream, _, bytes_remaining):
     progressBar.set(float(percentage_of_completion) / 100)
 
 
-
 # Thumbnail label
 thumbnail_label = tk.Label(app, text="Thumbnail", fg="green")
 thumbnail_label.pack(padx=10, pady=10)
-
 
 # System settings
 
 set_appearance_mode("System")
 set_default_color_theme("green")
-
 
 # Adding ui elements
 
