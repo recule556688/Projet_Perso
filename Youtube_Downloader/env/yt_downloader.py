@@ -23,6 +23,7 @@ app = CTk()
 app.geometry(WINDOW_GEOMETRY)
 app.title("YouTube Downloader")
 
+
 def startDownload():
     try:
         # Disable the download button
@@ -103,7 +104,6 @@ def on_progress(stream, _, bytes_remaining):
 
     # Update the progress bar
     progressBar.set(float(percentage_of_completion) / 100)
-
 
 
 # Thumbnail label

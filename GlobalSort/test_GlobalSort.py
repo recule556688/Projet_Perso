@@ -3,6 +3,7 @@ import shutil
 import locale
 from pathlib import Path
 
+
 def get_system_language():
     return locale.getlocale()[0]
 
@@ -95,7 +96,6 @@ class TestSortFiles(unittest.TestCase):
             0,
             "New directories were created in an empty directory",
         )
-
 
     def test_system_language_detection(self):
         # Call the function to get the system language
