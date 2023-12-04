@@ -1,6 +1,5 @@
 import unittest
 import shutil
-import os
 import locale
 from pathlib import Path
 
