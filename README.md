@@ -3,8 +3,6 @@
   <img src="./.github/karma.png" width="500" height="250" alt="Projet_Perso">
 </p>
 
-
-
 ![Github top language](https://img.shields.io/github/languages/top/recule556688/projet_perso?color=56BEB8)
 ![Github language count](https://img.shields.io/github/languages/count/recule556688/projet_perso?color=56BEB8)
 ![Repository size](https://img.shields.io/github/repo-size/recule556688/projet_perso?color=56BEB8)
