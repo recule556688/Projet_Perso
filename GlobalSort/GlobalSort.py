@@ -472,11 +472,11 @@ def display_help_ru():  # Function to display the help menu in Russian
     )
 
 
-def sort_files(directory, extensions, sorted):  # Add sorted as an argument
+def sort_files(directory, extensions, sorted_flag):  # Add sorted as an argument
     sorted_folders = set()  # Set to keep track of the sorted folders
     if not directory.exists():
         return (
-            sorted,
+            sorted_flag,
             sorted_folders,
         )  # Return sorted and sorted_folders if the directory does not exist
 
@@ -491,7 +491,7 @@ def sort_files(directory, extensions, sorted):  # Add sorted as an argument
             try:
                 file.rename(fichier_cible)
                 undo_stack.append((fichier_cible, file))
-                sorted = True  # Set the flag to True if a file has been moved
+                sorted_flag = True  # Set the flag to True if a file has been moved
                 sorted_folders.add(
                     str(dossier_cible_absolu)
                 )  # Add the folder to the sorted folders set
@@ -500,7 +500,7 @@ def sort_files(directory, extensions, sorted):  # Add sorted as an argument
                     f"Exception when moving file: {e}"
                 )  # Print the exception if one is thrown
 
-    return sorted, sorted_folders  # Return the sorted flag and the sorted folders
+    return sorted_flag, sorted_folders  # Return the sorted flag and the sorted folders
 
 
 def undo_all_operations():  # Function to undo all operations
@@ -539,7 +539,7 @@ def clear_console():  # Function to clear the console
 
 
 def main():  # Main function
-    sorted = False  # Flag to keep track if any file has been moved
+    sorted_flag = False  # Flag to keep track if any file has been moved
     sorted_folders = set()  # Set to keep track of the sorted folders
     while True:
         if os_language == "fr":
@@ -607,32 +607,32 @@ def main():  # Main function
             print("\033[1;34m" + "-" * 100 + "\033[0m")
             continue
         if user_choice == "1":  # Sort music files
-            sorted, new_folders = sort_files(
-                Path.home() / directories_name["Music"], EXTENSIONS_MUSIC, sorted
+            sorted_flag, new_folders = sort_files(
+                Path.home() / directories_name["Music"], EXTENSIONS_MUSIC, sorted_flag
             )
             clear_console()
             sorted_folders.update(new_folders)
         elif user_choice == "2":  # Sort video files
-            sorted, new_folders = sort_files(
-                Path.home() / directories_name["Videos"], EXTENSIONS_VIDEO, sorted
+            sorted_flag, new_folders = sort_files(
+                Path.home() / directories_name["Videos"], EXTENSIONS_VIDEO, sorted_flag
             )
             clear_console()
             sorted_folders.update(new_folders)
         elif user_choice == "3":  # Sort image files
-            sorted, new_folders = sort_files(
-                Path.home() / directories_name["Images"], EXTENSIONS_IMAGE, sorted
+            sorted_flag, new_folders = sort_files(
+                Path.home() / directories_name["Images"], EXTENSIONS_IMAGE, sorted_flag
             )
             clear_console()
             sorted_folders.update(new_folders)
         elif user_choice == "4":  # Sort document files
-            sorted, new_folders = sort_files(
-                Path.home() / directories_name["Documents"], EXTENSIONS_DOCUMENT, sorted
+            sorted_flag, new_folders = sort_files(
+                Path.home() / directories_name["Documents"], EXTENSIONS_DOCUMENT, sorted_flag
             )
             clear_console()
             sorted_folders.update(new_folders)
         elif user_choice == "5":  # Sort download files
-            sorted, new_folders = sort_files(
-                Path.home() / directories_name["Downloads"], EXTENSIONS_DOWNLOAD, sorted
+            sorted_flag, new_folders = sort_files(
+                Path.home() / directories_name["Downloads"], EXTENSIONS_DOWNLOAD, sorted_flag
             )
             clear_console()
             sorted_folders.update(new_folders)
@@ -655,40 +655,40 @@ def main():  # Main function
                     )
                     print("\033[1;34m{}\033[0m".format("-" * 100))
                     return
-                sorted, new_folders = sort_files(
-                    Custom_DIR, EXTENSIONS_DOWNLOAD, sorted
+                sorted_flag, new_folders = sort_files(
+                    Custom_DIR, EXTENSIONS_DOWNLOAD, sorted_flag
                 )
                 clear_console()
                 sorted_folders.update(new_folders)
             except Exception as e:
                 print(f"\033[1;31mAn error occurred: {e}\033[0m")
         elif user_choice == "7":  # Sort all the directories
-            sorted, new_folders = sort_files(
-                Path.home() / directories_name["Music"], EXTENSIONS_MUSIC, sorted
+            sorted_flag, new_folders = sort_files(
+                Path.home() / directories_name["Music"], EXTENSIONS_MUSIC, sorted_flag
             )
             clear_console()
             sorted_folders.update(new_folders)
-            sorted, new_folders = sort_files(
-                Path.home() / directories_name["Videos"], EXTENSIONS_VIDEO, sorted
+            sorted_flag, new_folders = sort_files(
+                Path.home() / directories_name["Videos"], EXTENSIONS_VIDEO, sorted_flag
             )
             clear_console()
             sorted_folders.update(new_folders)
-            sorted, new_folders = sort_files(
-                Path.home() / directories_name["Images"], EXTENSIONS_IMAGE, sorted
+            sorted_flag, new_folders = sort_files(
+                Path.home() / directories_name["Images"], EXTENSIONS_IMAGE, sorted_flag
             )
             clear_console()
             sorted_folders.update(new_folders)
-            sorted, new_folders = sort_files(
-                Path.home() / directories_name["Downloads"], EXTENSIONS_DOWNLOAD, sorted
+            sorted_flag, new_folders = sort_files(
+                Path.home() / directories_name["Downloads"], EXTENSIONS_DOWNLOAD, sorted_flag
             )
             clear_console()
             sorted_folders.update(new_folders)
-            sorted, new_folders = sort_files(
-                Path.home() / directories_name["Documents"], EXTENSIONS_DOCUMENT, sorted
+            sorted_flag, new_folders = sort_files(
+                Path.home() / directories_name["Documents"], EXTENSIONS_DOCUMENT, sorted_flag
             )
             clear_console()
             sorted_folders.update(new_folders)
-            if sorted:  # Only print if any file has been moved
+            if sorted_flag:  # Only print if any file has been moved
                 clear_console()
                 for folder in sorted_folders:
                     print(
