@@ -1,5 +1,21 @@
 
 # 🎥 YouTube Downloader
+<table align="center">
+  <tr>
+    <td>
+
+![Github top language](https://img.shields.io/github/languages/top/recule556688/projet_perso?color=56BEB8)
+![Github language count](https://img.shields.io/github/languages/count/recule556688/projet_perso?color=56BEB8)
+![Repository size](https://img.shields.io/github/repo-size/recule556688/projet_perso?color=56BEB8)
+[![License: MIT](https://img.shields.io/badge/License-MIT-56BEB8.svg)](https://github.com/recule556688/Projet_Perso/blob/main/LICENSE)
+![Github issues](https://img.shields.io/github/issues/recule556688/projet_perso?color=56BEB8)
+![Github forks](https://img.shields.io/github/forks/recule556688/projet_perso?color=56BEB8)
+![Github stars](https://img.shields.io/github/stars/recule556688/projet_perso?color=56BEB8)
+[![DeepSource](https://app.deepsource.com/gh/recule556688/Projet_Perso.svg/?label=active+issues&show_trend=true&token=lfgj4HrvZJ4AkB9HGLVVa6K7)](https://app.deepsource.com/gh/recule556688/Projet_Perso/)
+[![DeepSource](https://app.deepsource.com/gh/recule556688/Projet_Perso.svg/?label=resolved+issues&show_trend=true&token=lfgj4HrvZJ4AkB9HGLVVa6K7)](https://app.deepsource.com/gh/recule556688/Projet_Perso/)
+
+  </tr>
+</table>
 
 ## 📚 Table of Contents
 

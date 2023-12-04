@@ -14,6 +14,9 @@
 ![Github issues](https://img.shields.io/github/issues/recule556688/projet_perso?color=56BEB8)
 ![Github forks](https://img.shields.io/github/forks/recule556688/projet_perso?color=56BEB8)
 ![Github stars](https://img.shields.io/github/stars/recule556688/projet_perso?color=56BEB8)
+[![DeepSource](https://app.deepsource.com/gh/recule556688/Projet_Perso.svg/?label=active+issues&show_trend=true&token=lfgj4HrvZJ4AkB9HGLVVa6K7)](https://app.deepsource.com/gh/recule556688/Projet_Perso/)
+[![DeepSource](https://app.deepsource.com/gh/recule556688/Projet_Perso.svg/?label=resolved+issues&show_trend=true&token=lfgj4HrvZJ4AkB9HGLVVa6K7)](https://app.deepsource.com/gh/recule556688/Projet_Perso/)
+
   </tr>
 </table>
 
