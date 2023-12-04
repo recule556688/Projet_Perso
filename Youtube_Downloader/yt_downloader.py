@@ -98,7 +98,7 @@ def on_progress(stream, _, bytes_remaining):
     bytes_downloaded = total_size - bytes_remaining
     percentage_of_completion = bytes_downloaded / total_size * 100
     per = str(int(percentage_of_completion))
-    pPercentage.configure(text=per + "%", foreground="green")
+    pPercentage.configure(text=per + "%")
     pPercentage.update()
 
     # Update the progress bar
