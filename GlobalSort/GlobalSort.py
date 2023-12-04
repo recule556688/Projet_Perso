@@ -1,4 +1,4 @@
-# Importing required standard library modules
+#!/usr/bin/python3
 from pathlib import (
     Path,
 )  # For handling filesystem paths in a way that is compatible with all OS
