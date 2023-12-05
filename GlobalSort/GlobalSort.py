@@ -133,6 +133,7 @@ MENU_CHOICE = [
     "8",
     "9",
     "10",
+    "11",
 ]  # List of the menu choices
 
 EXTENSIONS_MUSIC = {  # Dictionary to store the extensions of the Music to be sorted
@@ -218,7 +219,8 @@ def generate_menu(language):  # Function to generate the menu in the correct lan
             "7 - Trier tous les répertoires",
             "8 - Annuler la dernière opération",
             "9 - Quitter le programme",
-            "10 - Afficher le menu d'aide",
+            "10 - Ajouter un dossier au programme de trie",
+            "11 - Afficher le menu d'aide",
         ],
         "en": [
             "MENU OPTIONS:",
@@ -231,7 +233,8 @@ def generate_menu(language):  # Function to generate the menu in the correct lan
             "7 - Sort all directories",
             "8 - Undo last operation",
             "9 - Quit the program",
-            "10 - Display help menu",
+            "10 - Add a folder to the sorting program",
+            "11 - Display the help menu",
         ],
         "es": [
             "OPCIONES DE MENÚ:",
@@ -244,7 +247,8 @@ def generate_menu(language):  # Function to generate the menu in the correct lan
             "7 - Ordenar todos los directorios",
             "8 - Deshacer la última operación",
             "9 - Salir del programa",
-            "10 - Mostrar el menú de ayuda",
+            "10 - Agregar una carpeta al programa de clasificación",
+            "11 - Mostrar el menú de ayuda",
         ],
         "it": [
             "OPZIONI MENU:",
@@ -257,7 +261,8 @@ def generate_menu(language):  # Function to generate the menu in the correct lan
             "7 - Ordina tutte le directory",
             "8 - Annulla l'ultima operazione",
             "9 - Esci dal programma",
-            "10 - Visualizza il menu di aiuto",
+            "10 - Aggiungi una cartella al programma di ordinamento",
+            "11 - Visualizza il menu di aiuto",
         ],
         "de": [
             "MENÜOPTIONEN:",
@@ -270,7 +275,8 @@ def generate_menu(language):  # Function to generate the menu in the correct lan
             "7 - Alle Verzeichnisse sortieren",
             "8 - Letzte Operation rückgängig machen",
             "9 - Programm beenden",
-            "10 - Hilfe-Menü anzeigen",
+            "10 - Ordner zum Sortierprogramm hinzufügen",
+            "11 - Hilfe anzeigen",
         ],
         "ru": [
             "ОПЦИИ МЕНЮ:",
@@ -283,7 +289,8 @@ def generate_menu(language):  # Function to generate the menu in the correct lan
             "7 - Сортировать все каталоги",
             "8 - Отменить последнюю операцию",
             "9 - Выйти из программы",
-            "10 - Показать меню помощи",
+            "10 - Добавить папку в программу сортировки",
+            "11 - Показать меню помощи",
         ],
     }
 
@@ -310,47 +317,32 @@ def generate_menu(language):  # Function to generate the menu in the correct lan
 
 def display_help_fr():  # function to display the help menu in French
     print(
-        "\033[1;34m{}\n\033[1;34m{}\n\033[1;34m{}\033[0m"
-        "\n\033[1;31m{}\033[0m"
-        "\n\033[1;32m{}\033[0m"
-        "\n\033[1;33m{}\033[0m"
-        "\n\033[1;34m{}\033[0m"
-        "\n\033[1;35m{}\033[0m"
-        "\n\033[1;36m{}\033[0m"
-        "\n\033[1;37m{}\033[0m"
-        "\n\033[1;31m{}\033[0m"
-        "\n\033[1;32m{}\033[0m"
-        "\n\033[1;33m{}\033[0m\n".format(
-            "-" * 100,
-            "OPTIONS DE MENU:".center(100),
-            "-" * 100,
-            "1. Trier les fichiers musicaux: Cette option triera tous les fichiers musicaux.".center(
-                100
-            ),
-            "2. Trier les fichiers vidéo: Cette option triera tous les fichiers vidéo.".center(
-                100
-            ),
-            "3. Trier les fichiers image: Cette option triera tous les fichiers image.".center(
-                100
-            ),
-            "4. Trier les fichiers de document: Cette option triera tous les fichiers de document.".center(
-                100
-            ),
-            "5. Trier les fichiers de téléchargement: Cette option triera tous les fichiers de téléchargement.".center(
-                100
-            ),
-            "6. Trier les fichiers d'un répertoire spécifique: Cette option triera tous les fichiers d'un répertoire spécifique.".center(
-                100
-            ),
-            "7. Trier tous les répertoires: Cette option triera tous les fichiers de tous les répertoires.".center(
-                100
-            ),
-            "8. Annuler la dernière opération: Cette option annulera la dernière opération de tri effectuée.".center(
-                100
-            ),
-            "9. Quitter le programme: Cette option fermera le programme.".center(100),
-            "10. Aide: Affiche ce message d'aide.".center(100),
+        f"\033[1;34m{'-' * 100}\n\033[1;34m{'OPTIONS DE MENU:'.center(100)}\n\033[1;34m{'-' * 100}\033[0m"
+        f"\n\033[1;31m{'1. Trier les fichiers musicaux: Cette option triera tous les fichiers musicaux.'.center(100)}\033[0m"
+        f"\n\033[1;32m{'2. Trier les fichiers vidéo: Cette option triera tous les fichiers vidéo.'.center(100)}\033[0m"
+        f"\n\033[1;33m{'3. Trier les fichiers image: Cette option triera tous les fichiers image.'.center(100)}\033[0m"
+        f"\n\033[1;34m{'4. Trier les fichiers de document: Cette option triera tous les fichiers de document.'.center(100)}\033[0m"
+        f"\n\033[1;35m{'5. Trier les fichiers de téléchargement: Cette option triera tous les fichiers de téléchargement.'.center(100)}\033[0m"
+        f"\n\033[1;36m"
+        + "6. Trier les fichiers d'un répertoire spécifique: Cette option triera tous les fichiers d'un répertoire spécifique.".center(
+            100
         )
+        + "\033[0m"
+        f"\n\033[1;37m{'7. Trier tous les répertoires: Cette option triera tous les fichiers de tous les répertoires.'.center(100)}\033[0m"
+        f"\n\033[1;31m"
+        + "8. Annuler la dernière opération: Cette option annulera la dernière opération de tri effectuée.".center(
+            100
+        )
+        + "\033[0m"
+        f"\n\033[1;32m{'9. Quitter le programme: Cette option fermera le programme.'.center(100)}\033[0m"
+        f"\n\033[1;33m"
+        + "10. Ajouter un dossier au programme de trie: Cette option ajoutera un nouveau dossier au programme de trie.".center(
+            100
+        )
+        + "\033[0m"
+        f"\n\033[1;34m"
+        + "11. Aide: Affiche ce message d'aide.".center(100)
+        + "\033[0m\n"
     )
 
 
@@ -364,11 +356,26 @@ def display_help_en():  # Function to display the help menu in English
         f"\n\033[1;33m{'3. Sort image files: This option will sort all image files.'.center(100)}\033[0m"
         f"\n\033[1;34m{'4. Sort document files: This option will sort all document files.'.center(100)}\033[0m"
         f"\n\033[1;35m{'5. Sort download files: This option will sort all download files.'.center(100)}\033[0m"
-        f"\n\033[1;36m{'6. Sort files from a specific directory: This option will sort all files from a specific directory.'.center(100)}\033[0m"
+        f"\n\033[1;36m"
+        + "6. Sort files from a specific directory: This option will sort all files from a specific directory.".center(
+            100
+        )
+        + "\033[0m"
         f"\n\033[1;37m{'7. Sort all directories: This option will sort all files from all directories.'.center(100)}\033[0m"
-        f"\n\033[1;31m{'8. Undo last operation: This option will undo the last sorting operation performed.'.center(100)}\033[0m"
+        f"\n\033[1;31m"
+        + "8. Undo last operation: This option will undo the last sorting operation performed.".center(
+            100
+        )
+        + "\033[0m"
         f"\n\033[1;32m{'9. Quit the program: This option will close the program.'.center(100)}\033[0m"
-        f"\n\033[1;33m{'10. Help: Displays this help message.'.center(100)}\033[0m\n"
+        f"\n\033[1;33m"
+        + "10. Add a directory to the sorting program: This option will add a new directory to the sorting program.".center(
+            100
+        )
+        + "\033[0m"
+        f"\n\033[1;34m"
+        + "11. Help: Displays this help message.".center(100)
+        + "\033[0m\n"
     )
 
 
@@ -382,57 +389,59 @@ def display_help_es():  # Function to display the help menu in Spanish
         f"\n\033[1;33m{'3. Ordenar archivos de imagen: Esta opción ordenará todos los archivos de imagen.'.center(100)}\033[0m"
         f"\n\033[1;34m{'4. Ordenar archivos de documento: Esta opción ordenará todos los archivos de documento.'.center(100)}\033[0m"
         f"\n\033[1;35m{'5. Ordenar archivos de descarga: Esta opción ordenará todos los archivos de descarga.'.center(100)}\033[0m"
-        f"\n\033[1;36m{'6. Ordenar archivos de un directorio específico: Esta opción ordenará todos los archivos de un directorio específico.'.center(100)}\033[0m"
+        f"\n\033[1;36m"
+        + "6. Ordenar archivos de un directorio específico: Esta opción ordenará todos los archivos de un directorio específico.".center(
+            100
+        )
+        + "\033[0m"
         f"\n\033[1;37m{'7. Ordenar todos los directorios: Esta opción ordenará todos los archivos de todos los directorios.'.center(100)}\033[0m"
-        f"\n\033[1;31m{'8. Deshacer la última operación: Esta opción deshará la última operación de ordenamiento realizada.'.center(100)}\033[0m"
+        f"\n\033[1;31m"
+        + "8. Deshacer la última operación: Esta opción deshará la última operación de ordenamiento realizada.".center(
+            100
+        )
+        + "\033[0m"
         f"\n\033[1;32m{'9. Salir del programa: Esta opción cerrará el programa.'.center(100)}\033[0m"
-        f"\n\033[1;33m{'10. Ayuda: Muestra este mensaje de ayuda.'.center(100)}\033[0m\n"
+        f"\n\033[1;33m"
+        + "10. Añadir un directorio al programa de ordenación: Esta opción añadirá un nuevo directorio al programa de ordenación.".center(
+            100
+        )
+        + "\033[0m"
+        f"\n\033[1;34m"
+        + "11. Ayuda: Muestra este mensaje de ayuda.".center(100)
+        + "\033[0m\n"
     )
 
 
 def display_help_it():  # Function to display the help menu in Italian
     print(
-        "\033[1;34m{}\n\033[1;34m{}\n\033[1;34m{}\033[0m"
-        "\n\033[1;31m{}\033[0m"
-        "\n\033[1;32m{}\033[0m"
-        "\n\033[1;33m{}\033[0m"
-        "\n\033[1;34m{}\033[0m"
-        "\n\033[1;35m{}\033[0m"
-        "\n\033[1;36m{}\033[0m"
-        "\n\033[1;37m{}\033[0m"
-        "\n\033[1;31m{}\033[0m"
-        "\n\033[1;32m{}\033[0m"
-        "\n\033[1;33m{}\033[0m\n".format(
-            "-" * 100,
-            "OPZIONI DI MENU:".center(100),
-            "-" * 100,
-            "1. Ordina file musicali: Questa opzione ordinerà tutti i file musicali.".center(
-                100
-            ),
-            "2. Ordina file video: Questa opzione ordinerà tutti i file video.".center(
-                100
-            ),
-            "3. Ordina file di immagini: Questa opzione ordinerà tutti i file di immagini.".center(
-                100
-            ),
-            "4. Ordina file di documenti: Questa opzione ordinerà tutti i file di documenti.".center(
-                100
-            ),
-            "5. Ordina file di download: Questa opzione ordinerà tutti i file di download.".center(
-                100
-            ),
-            "6. Ordina file da una directory specifica: Questa opzione ordinerà tutti i file da una directory specifica.".center(
-                100
-            ),
-            "7. Ordina tutte le directory: Questa opzione ordinerà tutti i file da tutte le directory.".center(
-                100
-            ),
-            "8. Annulla l'ultima operazione: Questa opzione annullerà l'ultima operazione di ordinamento eseguita.".center(
-                100
-            ),
-            "9. Esci dal programma: Questa opzione chiuderà il programma.".center(100),
-            "10. Aiuto: Mostra questo messaggio di aiuto.".center(100),
+        f"\033[1;34m{'-'*100}"
+        f"\n\033[1;34m{'OPZIONI DI MENU:'.center(100)}"
+        f"\n\033[1;34m{'-'*100}\033[0m"
+        f"\n\033[1;31m{'1. Ordina file musicali: Questa opzione ordinerà tutti i file musicali.'.center(100)}\033[0m"
+        f"\n\033[1;32m{'2. Ordina file video: Questa opzione ordinerà tutti i file video.'.center(100)}\033[0m"
+        f"\n\033[1;33m{'3. Ordina file di immagini: Questa opzione ordinerà tutti i file di immagini.'.center(100)}\033[0m"
+        f"\n\033[1;34m{'4. Ordina file di documenti: Questa opzione ordinerà tutti i file di documenti.'.center(100)}\033[0m"
+        f"\n\033[1;35m{'5. Ordina file di download: Questa opzione ordinerà tutti i file di download.'.center(100)}\033[0m"
+        f"\n\033[1;36m"
+        + "6. Ordina file da una directory specifica: Questa opzione ordinerà tutti i file da una directory specifica.".center(
+            100
         )
+        + "\033[0m"
+        f"\n\033[1;37m{'7. Ordina tutte le directory: Questa opzione ordinerà tutti i file da tutte le directory.'.center(100)}\033[0m"
+        f"\n\033[1;31m"
+        + "8. Annulla l'ultima operazione: Questa opzione annullerà l'ultima operazione di ordinamento eseguita.".center(
+            100
+        )
+        + "\033[0m"
+        f"\n\033[1;32m{'9. Esci dal programma: Questa opzione chiuderà il programma.'.center(100)}\033[0m"
+        f"\n\033[1;33m"
+        + "10. Aggiungi una directory al programma di ordinamento: Questa opzione aggiungerà una nuova directory al programma di ordinamento.".center(
+            100
+        )
+        + "\033[0m"
+        f"\n\033[1;34m"
+        + "11. Aiuto: Mostra questo messaggio di aiuto.".center(100)
+        + "\033[0m\n"
     )
 
 
@@ -446,11 +455,26 @@ def display_help_de():  # Function to display the help menu in German
         f"\n\033[1;33m{'3. Bilddateien sortieren: Diese Option sortiert alle Bilddateien.'.center(100)}\033[0m"
         f"\n\033[1;34m{'4. Dokumentdateien sortieren: Diese Option sortiert alle Dokumentdateien.'.center(100)}\033[0m"
         f"\n\033[1;35m{'5. Download-Dateien sortieren: Diese Option sortiert alle Download-Dateien.'.center(100)}\033[0m"
-        f"\n\033[1;36m{'6. Dateien aus einem bestimmten Verzeichnis sortieren: Diese Option sortiert alle Dateien aus einem bestimmten Verzeichnis.'.center(100)}\033[0m"
+        f"\n\033[1;36m"
+        + "6. Dateien aus einem bestimmten Verzeichnis sortieren: Diese Option sortiert alle Dateien aus einem bestimmten Verzeichnis.".center(
+            100
+        )
+        + "\033[0m"
         f"\n\033[1;37m{'7. Alle Verzeichnisse sortieren: Diese Option sortiert alle Dateien aus allen Verzeichnissen.'.center(100)}\033[0m"
-        f"\n\033[1;31m{'8. Letzte Operation rückgängig machen: Diese Option macht die letzte Sortieroperation rückgängig.'.center(100)}\033[0m"
+        f"\n\033[1;31m"
+        + "8. Letzte Operation rückgängig machen: Diese Option macht die letzte Sortieroperation rückgängig.".center(
+            100
+        )
+        + "\033[0m"
         f"\n\033[1;32m{'9. Programm beenden: Diese Option schließt das Programm.'.center(100)}\033[0m"
-        f"\n\033[1;33m{'10. Hilfe: Zeigt diese Hilfemeldung an.'.center(100)}\033[0m\n"
+        f"\n\033[1;33m"
+        + "10. Ein Verzeichnis zum Sortierprogramm hinzufügen: Diese Option fügt ein neues Verzeichnis zum Sortierprogramm hinzu.".center(
+            100
+        )
+        + "\033[0m"
+        f"\n\033[1;34m"
+        + "11. Hilfe: Zeigt diese Hilfemeldung an.".center(100)
+        + "\033[0m\n"
     )
 
 
@@ -468,7 +492,12 @@ def display_help_ru():  # Function to display the help menu in Russian
         f"\n\033[1;37m{'7. Сортировать все каталоги: Эта опция отсортирует все файлы из всех каталогов.'.center(100)}\033[0m"
         f"\n\033[1;31m{'8. Отменить последнюю операцию: Эта опция отменит последнюю операцию сортировки.'.center(100)}\033[0m"
         f"\n\033[1;32m{'9. Выйти из программы: Эта опция закроет программу.'.center(100)}\033[0m"
-        f"\n\033[1;33m{'10. Показать меню помощи: Это покажет это сообщение с помощью.'.center(100)}\033[0m\n"
+        f"\n\033[1;33m"
+        + "10. Добавить каталог в программу сортировки: Эта опция добавит новый каталог в программу сортировки.".center(
+            100
+        )
+        + "\033[0m"
+        f"\n\033[1;33m{'11. Показать меню помощи: Это покажет это сообщение с помощью.'.center(100)}\033[0m\n"
     )
 
 
@@ -769,13 +798,15 @@ def main():  # Main function
                 )
             print("\033[1;34m" + "-" * 100 + "\033[0m")
             sys.exit()
-        elif user_choice == "10":  # Display the help menu
+        elif user_choice == "10":  # Add a folder to the sorting program
+            return
+        elif user_choice == "11":  # Display the help menu
             if os_language == "fr":
                 clear_console()
                 display_help_fr()
             elif os_language == "en":
                 clear_console()
-                display_help_en()
+                display_help_ru()
             elif os_language == "es":
                 clear_console()
                 display_help_es()
