@@ -3,7 +3,7 @@
 [![Status](https://img.shields.io/badge/status-active-success.svg)](placeholder)
 [![GitHub Issues](https://img.shields.io/github/issues/recule556688/Projet_Perso)](https://github.com/recule556688/Projet_Perso/issues)
 [![License: MIT](https://img.shields.io/badge/License-MIT-56BEB8.svg)](https://github.com/recule556688/Projet_Perso/blob/main/LICENSE)
-
+![Repository size](https://img.shields.io/github/repo-size/recule556688/projet_perso?color=56BEB8)
 [![DeepSource](https://app.deepsource.com/gh/recule556688/Projet_Perso.svg/?label=active+issues&show_trend=true&token=lfgj4HrvZJ4AkB9HGLVVa6K7)](https://app.deepsource.com/gh/recule556688/Projet_Perso/)
 [![DeepSource](https://app.deepsource.com/gh/recule556688/Projet_Perso.svg/?label=resolved+issues&show_trend=true&token=lfgj4HrvZJ4AkB9HGLVVa6K7)](https://app.deepsource.com/gh/recule556688/Projet_Perso/)
 
@@ -20,8 +20,6 @@
 - [Supported Languages](#supported-languages)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Built Using](#built-using)
-- [Authors](#authors)
 - [📝 License](#license)
 
 ## 📖 About
@@ -49,29 +47,29 @@ This tool allows you to:
 
 ## Supported Extensions
 
-### Music 🎵
+### 🎵 Music
 
 - .mp3, .wav, .flac, .ogg, .wma, .m4a, .aac, .aiff, .ape
 
-### Video 🎥
+### 🎥 Video
 
 - .mp4, .avi, .gif, .mkv, .wmv, .mov
 
-### Image 🖼️
+### 🖼️ Image
 
 - .bmp, .png, .jpg, .jpeg, .heic, .svg
 
-### Document 📄
+### 📄 Document
 
 - .txt, .pptx, .csv, .xls, .odp, .pages, .pdf, .doc, .zip, .docx
 
-### Download 📥
+### 📥 Download
 
 - All the extensions mentioned above and:
 
     .exe, .bat, .sh, .py, .pyw, .msi, .apk, .app, .deb, .rpm, .bin, .dmg, .run, .jar
 
-## Supported Languages 🌐
+## 🌐 Supported Languages
 
 The program currently supports the following languages:
 
@@ -81,12 +79,35 @@ The program currently supports the following languages:
 - 🇩🇪 German
 - 🇮🇹 Italian
 
-## Installation
-
-### Prerequisites
+## Prerequisites
 
 - Git. You can download Git from its [official website](https://git-scm.com/downloads).
 - Python 3.6 or higher. You can download Python from the [official website](https://www.python.org/downloads/).
+## Installation
+1. Clone the repository to your local machine:
+
+```bash
+git clone https://github.com/recule556688/Projet_Perso.git
+```
+2. Navigate to the project's directory:
+
+```bash
+cd Youtube_Downloader
+```
+3. Install the required packages:
+```py
+pip install -r requirements.txt
+```
+4. Run the program:
+```python
+python GlobalSort.py
+```
+
+## Usage
+```py
+python GlobalSort.py
+```
+ <img src="./Assets/usage.gif" alt="Usage Gif" />
 
 ## 📝 License
 
