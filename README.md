@@ -65,7 +65,7 @@ The following tools were used in the [YoutubeDownloader](#youtubedownloader)
 
 ## 📝 License
 
-This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
+This project is under license from MIT. For more details, see the [LICENSE](LICENSE) file.
 
 Made with ❤️ by [Karma](https://github.com/recule556688)
 

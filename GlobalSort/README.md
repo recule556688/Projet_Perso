@@ -102,8 +102,8 @@ pip install -r requirements.txt
 ```python
 python GlobalSort.py
 ```
-
 ## Usage
+
 ```py
 python GlobalSort.py
 ```
@@ -111,7 +111,7 @@ python GlobalSort.py
 
 ## 📝 License
 
-This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
+This project is under license from MIT. For more details, see the [LICENSE](LICENSE) file.
 
 Made with ❤️ by [Karma](https://github.com/recule556688)
 

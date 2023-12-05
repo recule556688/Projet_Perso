@@ -78,7 +78,9 @@ cd Youtube_Downloader
 ### 3. 🌐 Create the virtual environment
 
 ```python
-python -m venv env  # This command creates the virtual environment named `env`.
+# This command creates the virtual environment named `env`.
+
+python -m venv env
 ```
 
 ### 4. 🚀 Activate the virtual environment
@@ -86,6 +88,8 @@ python -m venv env  # This command creates the virtual environment named `env`.
 On Windows:
 
 ```bash
+# these commands activate the virtual environment
+
 .\env\Scripts\activate
 
 # or sometimes you need to use this command:
@@ -96,6 +100,8 @@ source env/bin/activate
 On Unix or MacOS:
 
 ```bash
+# this command activates the virtual environment
+
 source env/bin/activate
 ```
 
@@ -104,7 +110,9 @@ source env/bin/activate
 Install all the necessary dependencies using pip:
 
 ```bash
-pip install -r requirements.txt # Install all the dependencies
+# Install all the dependencies
+
+pip install -r requirements.txt
 ```
 
 ### 6. ▶️ Run the program
@@ -112,7 +120,9 @@ pip install -r requirements.txt # Install all the dependencies
 Run the Python program:
 
 ```python
-python yt_downloader.py # The Graphical User Interface will be launched
+# The Graphical User Interface will be launched
+
+python yt_downloader.py
 ```
 
 ### 🎬 Usage <a name = "usage"></a>
@@ -122,7 +132,7 @@ python yt_downloader.py  # now copy paste a valid YouTube link in the GUI
 ```
 ### 📝 License
 
-This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
+This project is under license from MIT. For more details, see the [LICENSE](LICENSE) file.
 
 Made with ❤️ by [Karma](https://github.com/recule556688)
 
