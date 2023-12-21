@@ -30,7 +30,9 @@ def sort_files(directory, extensions, sorted_flag):  # Add sorted as an argument
                 print(
                     f"\033[1;32m{'Successfully moved ' + str(file) + ' to ' + str(dossier_cible_absolu).center(100)}\033[0m"
                 )  # Print a success message in green
-                log_message("info", messages["moved"].format(src=file, dst=dossier_cible_absolu))
+                log_message(
+                    "info", messages["moved"].format(src=file, dst=dossier_cible_absolu)
+                )
             except Exception as e:
                 print(
                     f"Exception when moving file: {e}"

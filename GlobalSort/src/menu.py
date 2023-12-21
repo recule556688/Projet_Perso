@@ -489,5 +489,5 @@ def display_help_ru():  # Function to display the help menu in Russian
     )
 
 
-def print_message(color, message): # Function to print a message in the correct color
+def print_message(color, message):  # Function to print a message in the correct color
     print(f"{color}{message}\033[0m")

@@ -1,7 +1,6 @@
 import logging
 
 
-
 def setup_logging():
     logging.basicConfig(  # Configure the logging module
         filename="file_sorter.log",
