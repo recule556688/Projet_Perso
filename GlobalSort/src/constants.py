@@ -1,4 +1,3 @@
-
 MENU_CHOICE = [
     "1",
     "2",
@@ -55,9 +54,9 @@ EXTENSIONS_DOCUMENT = (
         ".docx": "Documents",
     }
 )
-EXTENSIONS_DOWNLOAD = (
+EXTENSIONS_DOWNLOAD = (  # Dictionary to store the extensions of the Download to be sorted
     {}
-)  # Dictionary to store the extensions of the Download to be sorted
+)
 EXTENSIONS_DOWNLOAD.update(EXTENSIONS_DOCUMENT)
 EXTENSIONS_DOWNLOAD.update(EXTENSIONS_IMAGE)
 EXTENSIONS_DOWNLOAD.update(EXTENSIONS_VIDEO)

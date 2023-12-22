@@ -1,3 +1,6 @@
+from colorama import Fore, Style
+
+
 def generate_menu(language):  # Function to generate the menu in the correct language
     menu_options = {
         "fr": [
@@ -87,27 +90,29 @@ def generate_menu(language):  # Function to generate the menu in the correct lan
     }
 
     colors = [
-        "\033[1;34m",
-        "\033[1;31m",
-        "\033[1;32m",
-        "\033[1;33m",
-        "\033[1;34m",
-        "\033[1;35m",
-        "\033[1;36m",
-        "\033[1;37m",
-        "\033[1;31m",
-        "\033[1;32m",
-        "\033[1;33m",
+        Fore.BLUE,
+        Fore.RED,
+        Fore.GREEN,
+        Fore.YELLOW,
+        Fore.BLUE,
+        Fore.MAGENTA,
+        Fore.CYAN,
+        Fore.WHITE,
+        Fore.RED,
+        Fore.GREEN,
+        Fore.YELLOW,
     ]
 
     menu = "\n".join(
-        f"{colors[i%len(colors)]}{option.center(100)}\033[0m"
+        f"{colors[i%len(colors)]}{option.center(100)}{Style.RESET_ALL}"
         for i, option in enumerate(menu_options.get(language, menu_options["en"]))
     )
-    return f"\033[1;34m{'-'*100}\033[0m\n{menu}\n\033[1;34m{'-'*100}\033[0m\n\033[1;32m{'↪ Your Choice : '.center(100)}\033[0m"
+    return f"{Fore.BLUE}{'-'*100}{Style.RESET_ALL}\n{menu}\n{Fore.BLUE}{'-'*100}{Style.RESET_ALL}\n{Fore.GREEN}{'↪ Your Choice : '.center(100)}{Style.RESET_ALL}"
 
 
-def generate_help_menu(language):  # Function to generate the help menu in the correct language
+def generate_help_menu(
+    language,
+):  # Function to generate the help menu in the correct language
     help_options = {
         "fr": [
             "OPTIONS D'AIDE:",
@@ -196,25 +201,25 @@ def generate_help_menu(language):  # Function to generate the help menu in the c
     }
 
     colors = [
-        "\033[1;34m",
-        "\033[1;31m",
-        "\033[1;32m",
-        "\033[1;33m",
-        "\033[1;34m",
-        "\033[1;35m",
-        "\033[1;36m",
-        "\033[1;37m",
-        "\033[1;31m",
-        "\033[1;32m",
-        "\033[1;33m",
+        Fore.BLUE,
+        Fore.RED,
+        Fore.GREEN,
+        Fore.YELLOW,
+        Fore.BLUE,
+        Fore.MAGENTA,
+        Fore.CYAN,
+        Fore.WHITE,
+        Fore.RED,
+        Fore.GREEN,
+        Fore.YELLOW,
     ]
 
     help_menu = "\n".join(
-        f"{colors[i%len(colors)]}{option.center(100)}\033[0m"
+        f"{colors[i%len(colors)]}{option.center(100)}{Style.RESET_ALL}"
         for i, option in enumerate(help_options.get(language, help_options["en"]))
     )
-    return f"\033[1;34m{'-'*100}\033[0m\n{help_menu}\n\033[1;34m{'-'*100}\033[0m\n\033[1;32m{'↪ Your Choice : '.center(100)}\033[0m"
+    return f"{Fore.BLUE}{'-'*100}{Style.RESET_ALL}\n{help_menu}\n{Fore.BLUE}{'-'*100}{Style.RESET_ALL}\n{Fore.GREEN}{'↪ Your Choice : '.center(100)}{Style.RESET_ALL}"
 
 
 def print_message(color, message):  # Function to print a message in the correct color
-    print(f"{color}{message}\033[0m")
+    print(f"{color}{message}{Style.RESET_ALL}")

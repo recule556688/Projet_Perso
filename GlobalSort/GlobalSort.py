@@ -14,6 +14,7 @@ from src.utils import sort_files, clear_console
 from src.undo import undo_all_operations
 from pathlib import Path
 import sys
+from colorama import Fore, Style
 
 
 def run():  # Main function that runs the program
@@ -24,14 +25,14 @@ def run():  # Main function that runs the program
             os_language, LANGUAGE_FUNCTIONS["en"]
         )
         user_choice = input(language_functions["menu"])
-        print("--" * 50)
+        print(Fore.BLUE + "--" * 50 + Style.RESET_ALL)
         if user_choice not in MENU_CHOICE:
             clear_console()
             print_message(
                 language_functions["color"],
                 language_functions["invalid_choice_message"],
             )
-            print("\033[1;34m" + "-" * 100 + "\033[0m")
+            print(Fore.BLUE + "-" * 100 + Style.RESET_ALL)
             continue
         elif user_choice == "1":  # Sort music files
             sorted_flag, new_folders = sort_files(
@@ -69,22 +70,22 @@ def run():  # Main function that runs the program
             sorted_folders.update(new_folders)
         elif user_choice == "6":  # Sort a specific folder
             try:
-                print("\033[1;34m{}\033[0m".format("-" * 100))
+                print(Fore.BLUE + "{}".format("-" * 100) + Style.RESET_ALL)
                 Custom_DIR = Path(
                     input(
-                        "\033[1;34m{}\033[0m".format(
+                        Fore.BLUE + "{}".format(
                             "Enter the path of the folder? ".center(100, " ")
-                        )
+                        ) + Style.RESET_ALL
                     )
                 )
                 if not Custom_DIR.exists():
-                    print("\033[1;34m{}\033[0m".format("-" * 100))
+                    print(Fore.BLUE + "{}".format("-" * 100) + Style.RESET_ALL)
                     print(
-                        "\033[1;31m{}\033[0m".format(
+                        Fore.RED + "{}".format(
                             "The specified path does not exist.".center(100, " ")
-                        )
+                        ) + Style.RESET_ALL
                     )
-                    print("\033[1;34m{}\033[0m".format("-" * 100))
+                    print(Fore.BLUE + "{}".format("-" * 100) + Style.RESET_ALL)
                     return
                 sorted_flag, new_folders = sort_files(
                     Custom_DIR, EXTENSIONS_DOWNLOAD, sorted_flag
@@ -92,7 +93,7 @@ def run():  # Main function that runs the program
                 clear_console()
                 sorted_folders.update(new_folders)
             except Exception as e:
-                print(f"\033[1;31mAn error occurred: {e}\033[0m")
+                print(Fore.RED + f"An error occurred: {e}" + Style.RESET_ALL)
         elif user_choice == "7":  # Sort all the directories
             sorted_flag, new_folders = sort_files(
                 Path.home() / directories_name["Music"], EXTENSIONS_MUSIC, sorted_flag
@@ -127,19 +128,16 @@ def run():  # Main function that runs the program
                 clear_console()
                 for folder in sorted_folders:
                     print(
-                        "\033[1;34m{}\n\033[1;34m{}\033[0m".format(
-                            "-" * 100,
+                        Fore.BLUE + "{}\n".format("-" * 100) + Fore.BLUE + "{}".format(
                             messages["file_sorted"]
                             .format(directory=folder)
                             .center(100),
-                        )
+                        ) + Style.RESET_ALL
                     )
             else:  # Print a different message if no files have been moved
                 clear_console()
                 print(
-                    "\033[1;34m{}\n\033[1;31m{}\033[0m".format(
-                        "-" * 100, "No files were moved.".center(100)
-                    )
+                    Fore.BLUE + "{}\n".format("-" * 100) + Fore.RED + "{}".format("No files were moved.".center(100)) + Style.RESET_ALL
                 )
         elif user_choice == "8":  # Add a folder to the sorting program
             return
@@ -147,56 +145,68 @@ def run():  # Main function that runs the program
             clear_console()
             undo_all_operations()
         elif user_choice == "10":  # Quit the program
-            print("\033[1;34m" + "-" * 100)
+            print(Fore.BLUE + "-" * 100 + Style.RESET_ALL)
             if os_language == "fr":
                 clear_console()
                 print(
-                    "\033[1;34m"
+                    Fore.BLUE
                     + "-" * 100
-                    + "\n\033[1;31m"
+                    + "\n"
+                    + Fore.RED
                     + "Fermeture du programme".center(100)
+                    + Style.RESET_ALL
                 )
             elif os_language == "en":
                 clear_console()
                 print(
-                    "\033[1;34m"
+                    Fore.BLUE
                     + "-" * 100
-                    + "\n\033[1;32m"
+                    + "\n"
+                    + Fore.GREEN
                     + "Closing the program".center(100)
+                    + Style.RESET_ALL
                 )
             elif os_language == "es":
                 clear_console()
                 print(
-                    "\033[1;34m"
+                    Fore.BLUE
                     + "-" * 100
-                    + "\n\033[1;33m"
+                    + "\n"
+                    + Fore.YELLOW
                     + "Cerrando el programa".center(100)
+                    + Style.RESET_ALL
                 )
             elif os_language == "it":
                 clear_console()
                 print(
-                    "\033[1;34m"
+                    Fore.BLUE
                     + "-" * 100
-                    + "\n\033[1;34m"
+                    + "\n"
+                    + Fore.BLUE
                     + "Chiusura del programma".center(100)
+                    + Style.RESET_ALL
                 )
             elif os_language == "de":
                 clear_console()
                 print(
-                    "\033[1;34m"
+                    Fore.BLUE
                     + "-" * 100
-                    + "\n\033[1;35m"
+                    + "\n"
+                    + Fore.MAGENTA
                     + "Schließen des Programms".center(100)
+                    + Style.RESET_ALL
                 )
             elif os_language == "ru":
                 clear_console()
                 print(
-                    "\033[1;34m"
+                    Fore.BLUE
                     + "-" * 100
-                    + "\n\033[1;36m"
+                    + "\n"
+                    + Fore.CYAN
                     + "Закрытие программы".center(100)
+                    + Style.RESET_ALL
                 )
-            print("\033[1;34m" + "-" * 100 + "\033[0m")
+            print(Fore.BLUE + "-" * 100 + Style.RESET_ALL)
             sys.exit()
         elif user_choice == "11":  # Display the help menu
             clear_console()

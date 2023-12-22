@@ -3,43 +3,43 @@ from .menu import (
     generate_menu,
     generate_help_menu,
 )
+from colorama import Fore
 
-
-LANGUAGE_FUNCTIONS = {  # Define the dictionary
+LANGUAGE_FUNCTIONS = {
     "fr": {
         "menu": generate_menu("fr"),
         "help": generate_help_menu("fr"),
-        "color": "\033[1;31m",
+        "color": Fore.RED,
         "invalid_choice_message": "Veuillez entrer un choix valide",
     },
     "en": {
         "menu": generate_menu("en"),
         "help": generate_help_menu("en"),
-        "color": "\033[1;32m",
+        "color": Fore.GREEN,
         "invalid_choice_message": "Please enter a valid choice",
     },
     "es": {
         "menu": generate_menu("es"),
         "help": generate_help_menu("es"),
-        "color": "\033[1;33m",
+        "color": Fore.YELLOW,
         "invalid_choice_message": "Por favor ingrese una opción válida",
     },
     "it": {
         "menu": generate_menu("it"),
         "help": generate_help_menu("it"),
-        "color": "\033[1;34m",
+        "color": Fore.BLUE,
         "invalid_choice_message": "Si prega di inserire una scelta valida",
     },
     "de": {
         "menu": generate_menu("de"),
         "help": generate_help_menu("de"),
-        "color": "\033[1;35m",
+        "color": Fore.MAGENTA,
         "invalid_choice_message": "Bitte geben Sie eine gültige Auswahl ein",
     },
     "ru": {
         "menu": generate_menu("ru"),
         "help": generate_help_menu("ru"),
-        "color": "\033[1;36m",
+        "color": Fore.CYAN,
         "invalid_choice_message": "Пожалуйста, введите действительный выбор",
     },
 }

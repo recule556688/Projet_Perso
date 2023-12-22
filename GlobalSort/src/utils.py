@@ -1,4 +1,5 @@
 import os
+from colorama import Fore, Style
 from .undo import undo_stack
 from .language import messages
 from .logger import log_message
@@ -34,7 +35,7 @@ def sort_files(directory, extensions, sorted_flag):  # Add sorted as an argument
                         str(dossier_cible_absolu)
                     )  # Add the folder to the sorted folders set
                     print(
-                        f"\033[1;32m{'Successfully moved ' + str(file) + ' to ' + str(dossier_cible_absolu).center(100)}\033[0m"
+                        f"{Fore.GREEN}{'Successfully moved ' + str(file) + ' to ' + str(dossier_cible_absolu).center(100)}{Style.RESET_ALL}"
                     )  # Print a success message in green
                     log_message(
                         "info",
