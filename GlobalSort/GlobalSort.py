@@ -73,17 +73,19 @@ def run():  # Main function that runs the program
                 print(Fore.BLUE + "{}".format("-" * 100) + Style.RESET_ALL)
                 Custom_DIR = Path(
                     input(
-                        Fore.BLUE + "{}".format(
-                            "Enter the path of the folder? ".center(100, " ")
-                        ) + Style.RESET_ALL
+                        Fore.BLUE
+                        + "{}".format("Enter the path of the folder? ".center(100, " "))
+                        + Style.RESET_ALL
                     )
                 )
                 if not Custom_DIR.exists():
                     print(Fore.BLUE + "{}".format("-" * 100) + Style.RESET_ALL)
                     print(
-                        Fore.RED + "{}".format(
+                        Fore.RED
+                        + "{}".format(
                             "The specified path does not exist.".center(100, " ")
-                        ) + Style.RESET_ALL
+                        )
+                        + Style.RESET_ALL
                     )
                     print(Fore.BLUE + "{}".format("-" * 100) + Style.RESET_ALL)
                     return
@@ -128,16 +130,24 @@ def run():  # Main function that runs the program
                 clear_console()
                 for folder in sorted_folders:
                     print(
-                        Fore.BLUE + "{}\n".format("-" * 100) + Fore.BLUE + "{}".format(
+                        Fore.BLUE
+                        + "{}\n".format("-" * 100)
+                        + Fore.BLUE
+                        + "{}".format(
                             messages["file_sorted"]
                             .format(directory=folder)
                             .center(100),
-                        ) + Style.RESET_ALL
+                        )
+                        + Style.RESET_ALL
                     )
             else:  # Print a different message if no files have been moved
                 clear_console()
                 print(
-                    Fore.BLUE + "{}\n".format("-" * 100) + Fore.RED + "{}".format("No files were moved.".center(100)) + Style.RESET_ALL
+                    Fore.BLUE
+                    + "{}\n".format("-" * 100)
+                    + Fore.RED
+                    + "{}".format("No files were moved.".center(100))
+                    + Style.RESET_ALL
                 )
         elif user_choice == "8":  # Add a folder to the sorting program
             return
@@ -213,9 +223,11 @@ def run():  # Main function that runs the program
             print(language_functions["help"])
             continue
 
+
 def main():  # Main function
     setup_logging()
     run()
+
 
 if __name__ == "__main__":  # Run the main function
     main()
