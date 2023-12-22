@@ -8,27 +8,15 @@ from src.constants import (
     EXTENSIONS_DOWNLOAD,
 )
 from src.logger import setup_logging
-from src.menu import (
-    generate_menu,
-    display_help_fr,
-    display_help_en,
-    display_help_es,
-    display_help_it,
-    display_help_de,
-    display_help_ru,
-    print_message,
-)
+from src.menu import print_message
 from src.language import os_language, directories_name, messages, LANGUAGE_FUNCTIONS
 from src.utils import sort_files, clear_console
 from src.undo import undo_all_operations
 from pathlib import Path
 import sys
-import os
-
-setup_logging()  # Setup the logging configuration
 
 
-def main():  # Main function that runs the program
+def run():  # Main function that runs the program
     sorted_flag = False  # Flag to keep track if any file has been moved
     sorted_folders = set()  # Set to keep track of the sorted folders
     while True:
@@ -212,9 +200,12 @@ def main():  # Main function that runs the program
             sys.exit()
         elif user_choice == "11":  # Display the help menu
             clear_console()
-            language_functions["help"]()
+            print(language_functions["help"])
             continue
 
+def main():  # Main function
+    setup_logging()
+    run()
 
 if __name__ == "__main__":  # Run the main function
     main()

@@ -1,49 +1,44 @@
 import locale
 from .menu import (
     generate_menu,
-    display_help_fr,
-    display_help_en,
-    display_help_es,
-    display_help_it,
-    display_help_de,
-    display_help_ru,
+    generate_help_menu,
 )
 
 
 LANGUAGE_FUNCTIONS = {  # Define the dictionary
     "fr": {
         "menu": generate_menu("fr"),
-        "help": display_help_fr,
+        "help": generate_help_menu("fr"),
         "color": "\033[1;31m",
         "invalid_choice_message": "Veuillez entrer un choix valide",
     },
     "en": {
         "menu": generate_menu("en"),
-        "help": display_help_en,
+        "help": generate_help_menu("en"),
         "color": "\033[1;32m",
         "invalid_choice_message": "Please enter a valid choice",
     },
     "es": {
         "menu": generate_menu("es"),
-        "help": display_help_es,
+        "help": generate_help_menu("es"),
         "color": "\033[1;33m",
         "invalid_choice_message": "Por favor ingrese una opción válida",
     },
     "it": {
         "menu": generate_menu("it"),
-        "help": display_help_it,
+        "help": generate_help_menu("it"),
         "color": "\033[1;34m",
         "invalid_choice_message": "Si prega di inserire una scelta valida",
     },
     "de": {
         "menu": generate_menu("de"),
-        "help": display_help_de,
+        "help": generate_help_menu("de"),
         "color": "\033[1;35m",
         "invalid_choice_message": "Bitte geben Sie eine gültige Auswahl ein",
     },
     "ru": {
         "menu": generate_menu("ru"),
-        "help": display_help_ru,
+        "help": generate_help_menu("ru"),
         "color": "\033[1;36m",
         "invalid_choice_message": "Пожалуйста, введите действительный выбор",
     },
@@ -99,6 +94,7 @@ LOG_MESSAGES = {  # Map log messages to the correct language
         "file_sorted": "The file {directory} has been sorted",
         "moved": "Moved file from {src} to {dst}",
         "no_operation_to_cancel": "There is no operation to cancel.",
+        "console_cleared": "Console cleared",
     },
     "fr": {
         "dir_not_exist": "Le répertoire {directory} n'existe pas.",
@@ -106,6 +102,7 @@ LOG_MESSAGES = {  # Map log messages to the correct language
         "file_sorted": "Le fichier {directory} a bien été trié",
         "moved": "Fichier déplacé de {src} à {dst}",
         "no_operation_to_cancel": "Il n'y a aucune opération à annuler.",
+        "console_cleared": "Console effacée",
     },
     "es": {
         "dir_not_exist": "El directorio {directory} no existe.",
@@ -113,6 +110,7 @@ LOG_MESSAGES = {  # Map log messages to the correct language
         "file_sorted": "El archivo {directory} ha sido ordenado",
         "moved": "Archivo movido de {src} a {dst}",
         "no_operation_to_cancel": "No hay operación para cancelar.",
+        "console_cleared": "Consola borrada",
     },
     "it": {
         "dir_not_exist": "La directory {directory} non esiste.",
@@ -120,6 +118,7 @@ LOG_MESSAGES = {  # Map log messages to the correct language
         "file_sorted": "Il file {directory} è stato ordinato",
         "moved": "File spostato da {src} a {dst}",
         "no_operation_to_cancel": "Non c'è alcuna operazione da annullare.",
+        "console_cleared": "Console cancellata",
     },
     "de": {
         "dir_not_exist": "Das Verzeichnis {directory} existiert nicht.",
@@ -127,6 +126,7 @@ LOG_MESSAGES = {  # Map log messages to the correct language
         "file_sorted": "Die Datei {directory} wurde sortiert",
         "moved": "Datei von {src} nach {dst} verschoben",
         "no_operation_to_cancel": "Es gibt keine Operation zum Abbrechen.",
+        "console_cleared": "Konsole gelöscht",
     },
     "ru": {
         "dir_not_exist": "Каталог {directory} не существует.",
@@ -134,6 +134,7 @@ LOG_MESSAGES = {  # Map log messages to the correct language
         "file_sorted": "Файл {directory} был отсортирован",
         "moved": "Файл перемещен из {src} в {dst}",
         "no_operation_to_cancel": "Нет операции для отмены.",
+        "console_cleared": "Консоль очищена",
     },
 }
 

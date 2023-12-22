@@ -20,22 +20,33 @@ def sort_files(directory, extensions, sorted_flag):  # Add sorted as an argument
         if (
             file.parent != dossier_cible_absolu
         ):  # Check if the file is not in the correct folder
-            try:
-                file.rename(fichier_cible)
-                undo_stack.append((fichier_cible, file))
-                sorted_flag = True  # Set the flag to True if a file has been moved
-                sorted_folders.add(
-                    str(dossier_cible_absolu)
-                )  # Add the folder to the sorted folders set
+            if fichier_cible.exists():
                 print(
-                    f"\033[1;32m{'Successfully moved ' + str(file) + ' to ' + str(dossier_cible_absolu).center(100)}\033[0m"
-                )  # Print a success message in green
-                log_message("info", messages["moved"].format(src=file, dst=dossier_cible_absolu))
-            except Exception as e:
-                print(
-                    f"Exception when moving file: {e}"
-                )  # Print the exception if one is thrown
-                log_message("error", messages["exception"].format(exception=e))
+                    f"File {fichier_cible} already exists in the destination directory"
+                )
+                log_message("info", messages["file_exists"].format(dst=fichier_cible))
+            else:
+                try:
+                    file.rename(fichier_cible)
+                    undo_stack.append((fichier_cible, file))
+                    sorted_flag = True  # Set the flag to True if a file has been moved
+                    sorted_folders.add(
+                        str(dossier_cible_absolu)
+                    )  # Add the folder to the sorted folders set
+                    print(
+                        f"\033[1;32m{'Successfully moved ' + str(file) + ' to ' + str(dossier_cible_absolu).center(100)}\033[0m"
+                    )  # Print a success message in green
+                    log_message(
+                        "info",
+                        messages["moved"].format(src=file, dst=dossier_cible_absolu),
+                    )
+                except Exception as e:
+                    print(
+                        f"Exception when moving file: {e}"
+                    )  # Print the exception if one is thrown
+                    log_message(
+                        "info", messages["error_moving"].format(src=file, error=e)
+                    )
 
     return sorted_flag, sorted_folders  # Return the sorted flag and the sorted folders
 
