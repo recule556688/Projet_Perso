@@ -107,7 +107,9 @@ def generate_menu(language):  # Function to generate the menu in the correct lan
     return f"\033[1;34m{'-'*100}\033[0m\n{menu}\n\033[1;34m{'-'*100}\033[0m\n\033[1;32m{'↪ Your Choice : '.center(100)}\033[0m"
 
 
-def generate_help_menu(language):  # Function to generate the help menu in the correct language
+def generate_help_menu(
+    language,
+):  # Function to generate the help menu in the correct language
     help_options = {
         "fr": [
             "OPTIONS D'AIDE:",

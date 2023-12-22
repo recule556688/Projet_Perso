@@ -203,9 +203,11 @@ def run():  # Main function that runs the program
             print(language_functions["help"])
             continue
 
+
 def main():  # Main function
     setup_logging()
     run()
+
 
 if __name__ == "__main__":  # Run the main function
     main()
