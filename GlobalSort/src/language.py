@@ -2,43 +2,60 @@ import locale
 from .menu import (
     generate_menu,
     generate_help_menu,
+    generate_menu_choose_extensions,
+    generate_menu_edit_extensions,
+    generate_menu_edit_folder,
 )
+from .constants import folder_paths
 from colorama import Fore
 
 LANGUAGE_FUNCTIONS = {
     "fr": {
         "menu": generate_menu("fr"),
         "help": generate_help_menu("fr"),
+        "choose_extensions": generate_menu_choose_extensions("fr"),
+        "edit_extensions": generate_menu_edit_extensions("fr"),
         "color": Fore.RED,
         "invalid_choice_message": "Veuillez entrer un choix valide",
     },
     "en": {
         "menu": generate_menu("en"),
         "help": generate_help_menu("en"),
+        "choose_extensions": generate_menu_choose_extensions("en"),
+        "edit_extensions": generate_menu_edit_extensions("en"),
+        "edit_folder": generate_menu_edit_folder("en"),
         "color": Fore.GREEN,
         "invalid_choice_message": "Please enter a valid choice",
     },
     "es": {
         "menu": generate_menu("es"),
         "help": generate_help_menu("es"),
+        "choose_extensions": generate_menu_choose_extensions("es"),
+        "edit_extensions": generate_menu_edit_extensions("es"),
         "color": Fore.YELLOW,
         "invalid_choice_message": "Por favor ingrese una opción válida",
     },
     "it": {
         "menu": generate_menu("it"),
         "help": generate_help_menu("it"),
+        "choose_extensions": generate_menu_choose_extensions("it"),
+        "edit_extensions": generate_menu_edit_extensions("it"),
         "color": Fore.BLUE,
         "invalid_choice_message": "Si prega di inserire una scelta valida",
     },
     "de": {
         "menu": generate_menu("de"),
         "help": generate_help_menu("de"),
+        "choose_extensions": generate_menu_choose_extensions("de"),
+        "edit_extensions": generate_menu_edit_extensions("de"),
         "color": Fore.MAGENTA,
         "invalid_choice_message": "Bitte geben Sie eine gültige Auswahl ein",
     },
     "ru": {
         "menu": generate_menu("ru"),
         "help": generate_help_menu("ru"),
+        "choose_extensions": generate_menu_choose_extensions("ru"),
+        "edit_extensions": generate_menu_edit_extensions("ru"),
         "color": Fore.CYAN,
         "invalid_choice_message": "Пожалуйста, введите действительный выбор",
     },
@@ -95,6 +112,7 @@ LOG_MESSAGES = {  # Map log messages to the correct language
         "moved": "Moved file from {src} to {dst}",
         "no_operation_to_cancel": "There is no operation to cancel.",
         "console_cleared": "Console cleared",
+        "extension_not_found": "Extension not found",
     },
     "fr": {
         "dir_not_exist": "Le répertoire {directory} n'existe pas.",
@@ -103,6 +121,7 @@ LOG_MESSAGES = {  # Map log messages to the correct language
         "moved": "Fichier déplacé de {src} à {dst}",
         "no_operation_to_cancel": "Il n'y a aucune opération à annuler.",
         "console_cleared": "Console effacée",
+        "extension_not_found": "Extension non trouvée",
     },
     "es": {
         "dir_not_exist": "El directorio {directory} no existe.",
@@ -111,6 +130,7 @@ LOG_MESSAGES = {  # Map log messages to the correct language
         "moved": "Archivo movido de {src} a {dst}",
         "no_operation_to_cancel": "No hay operación para cancelar.",
         "console_cleared": "Consola borrada",
+        "extension_not_found": "Extensión no encontrada",
     },
     "it": {
         "dir_not_exist": "La directory {directory} non esiste.",
@@ -119,6 +139,7 @@ LOG_MESSAGES = {  # Map log messages to the correct language
         "moved": "File spostato da {src} a {dst}",
         "no_operation_to_cancel": "Non c'è alcuna operazione da annullare.",
         "console_cleared": "Console cancellata",
+        "extension_not_found": "Estensione non trovata",
     },
     "de": {
         "dir_not_exist": "Das Verzeichnis {directory} existiert nicht.",
@@ -127,6 +148,7 @@ LOG_MESSAGES = {  # Map log messages to the correct language
         "moved": "Datei von {src} nach {dst} verschoben",
         "no_operation_to_cancel": "Es gibt keine Operation zum Abbrechen.",
         "console_cleared": "Konsole gelöscht",
+        "extension_not_found": "Erweiterung nicht gefunden",
     },
     "ru": {
         "dir_not_exist": "Каталог {directory} не существует.",
@@ -135,9 +157,9 @@ LOG_MESSAGES = {  # Map log messages to the correct language
         "moved": "Файл перемещен из {src} в {dst}",
         "no_operation_to_cancel": "Нет операции для отмены.",
         "console_cleared": "Консоль очищена",
+        "extension_not_found": "Расширение не найдено",
     },
 }
-
 # Get the user's operating system language
 os_language = locale.getlocale()[0][:2] if locale.getlocale()[0] else "en"
 
