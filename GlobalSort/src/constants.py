@@ -28,7 +28,6 @@ EXTENSIONS_VIDEO = {
     ".mp4": "Videos",
     ".avi": "Videos",
     ".gif": "Videos",
-    ".avi": "Videos",
     ".mkv": "Videos",
     ".wmv": "Videos",
     ".mov": "Videos",
