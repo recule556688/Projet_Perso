@@ -137,11 +137,8 @@ def run():  # Main function that runs the program
             clear_console()
             sorted_folders.update(new_folders)
             folder_paths = load_folder_paths_from_file()
-            folder_dict = {'test': '/home/karma/Documents/scripts/Projet_Perso/GlobalSort/test'}
-            folder_name, folder_path = next(iter(folder_dict.items()))
-            print("Folder Name:", folder_name)
-            print("Folder Path:", folder_path)
-            print(folder_paths)
+            folder_name, folder_path = next(iter(folder_paths.items()))
+
             for folder_name, folder_path in folder_paths.items():
                 if Path(folder_path).is_dir():
                     sorted_flag, new_folders = sort_files(
