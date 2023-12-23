@@ -5,7 +5,6 @@ from colorama import Fore, Style
 from .undo import undo_stack
 from .language import messages, os_language, LANGUAGE_FUNCTIONS
 from .logger import log_message
-from .menu import generate_menu_edit_extensions, generate_menu_choose_extensions
 from .constants import (
     EXTENSIONS_PERSONNALISER,
     EXTENSIONS_DOCUMENT,
