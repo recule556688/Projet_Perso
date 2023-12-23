@@ -264,7 +264,7 @@ def modify_extensions():
                 print(
                     Fore.BLUE + "-" * len(str(selected_dict)) + Style.RESET_ALL + "\n"
                 )
-                log_message("info", f"Displayed all extensions.")
+                log_message("info", "Displayed all extensions.")
             elif operation == "4":  # Quit the edit menu
                 clear_console()
                 break
