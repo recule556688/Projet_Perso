@@ -6,11 +6,21 @@ from src.constants import (
     EXTENSIONS_IMAGE,
     EXTENSIONS_DOCUMENT,
     EXTENSIONS_DOWNLOAD,
+    EXTENSIONS_PERSONNALISER,
+    EXTENSIONS_ALL,
 )
 from src.logger import setup_logging
 from src.menu import print_message
 from src.language import os_language, directories_name, messages, LANGUAGE_FUNCTIONS
-from src.utils import sort_files, clear_console
+from src.utils import (
+    sort_files,
+    clear_console,
+    ensure_extensions_file_exists,
+    modify_extensions,
+    ensure_folder_paths_file_exists,
+    modify_folder_paths,
+    load_folder_paths_from_file,
+)
 from src.undo import undo_all_operations
 from pathlib import Path
 import sys
@@ -73,17 +83,19 @@ def run():  # Main function that runs the program
                 print(Fore.BLUE + "{}".format("-" * 100) + Style.RESET_ALL)
                 Custom_DIR = Path(
                     input(
-                        Fore.BLUE + "{}".format(
-                            "Enter the path of the folder? ".center(100, " ")
-                        ) + Style.RESET_ALL
+                        Fore.BLUE
+                        + "{}".format("Enter the path of the folder? ".center(100, " "))
+                        + Style.RESET_ALL
                     )
                 )
                 if not Custom_DIR.exists():
                     print(Fore.BLUE + "{}".format("-" * 100) + Style.RESET_ALL)
                     print(
-                        Fore.RED + "{}".format(
+                        Fore.RED
+                        + "{}".format(
                             "The specified path does not exist.".center(100, " ")
-                        ) + Style.RESET_ALL
+                        )
+                        + Style.RESET_ALL
                     )
                     print(Fore.BLUE + "{}".format("-" * 100) + Style.RESET_ALL)
                     return
@@ -124,27 +136,62 @@ def run():  # Main function that runs the program
             )
             clear_console()
             sorted_folders.update(new_folders)
+            folder_paths = load_folder_paths_from_file()
+            folder_dict = {'test': '/home/karma/Documents/scripts/Projet_Perso/GlobalSort/test'}
+            folder_name, folder_path = next(iter(folder_dict.items()))
+            print("Folder Name:", folder_name)
+            print("Folder Path:", folder_path)
+            print(folder_paths)
+            for folder_name, folder_path in folder_paths.items():
+                if Path(folder_path).is_dir():
+                    sorted_flag, new_folders = sort_files(
+                        Path(folder_path),
+                        EXTENSIONS_ALL,
+                        sorted_flag,
+                    )
+                    clear_console()
+                    sorted_folders.update(new_folders)
             if sorted_flag:  # Only print if any file has been moved
                 clear_console()
                 for folder in sorted_folders:
                     print(
-                        Fore.BLUE + "{}\n".format("-" * 100) + Fore.BLUE + "{}".format(
+                        Fore.BLUE
+                        + "{}\n".format("-" * 100)
+                        + Fore.BLUE
+                        + "{}".format(
                             messages["file_sorted"]
                             .format(directory=folder)
                             .center(100),
-                        ) + Style.RESET_ALL
+                        )
+                        + Style.RESET_ALL
                     )
             else:  # Print a different message if no files have been moved
                 clear_console()
                 print(
-                    Fore.BLUE + "{}\n".format("-" * 100) + Fore.RED + "{}".format("No files were moved.".center(100)) + Style.RESET_ALL
+                    Fore.BLUE
+                    + "{}\n".format("-" * 100)
+                    + Fore.RED
+                    + "{}".format("No files were moved.".center(100))
+                    + Style.RESET_ALL
                 )
         elif user_choice == "8":  # Add a folder to the sorting program
-            return
-        elif user_choice == "9":  # Revert the changes
+            clear_console()
+            modify_folder_paths()
+        elif user_choice == "9":  # Modify extensions
+            clear_console()
+            modify_extensions()
+        elif user_choice == "10":  # Revert the changes
             clear_console()
             undo_all_operations()
-        elif user_choice == "10":  # Quit the program
+        elif user_choice == "11":  # Display the help menu
+            clear_console()
+            print(language_functions["help"])
+            folder_paths = load_folder_paths_from_file()
+            values = list(folder_paths.values())
+            print(values[0])  # prints the first value
+            print(values[1])  # prints the second value
+            continue
+        elif user_choice == "12":  # Quit the program
             print(Fore.BLUE + "-" * 100 + Style.RESET_ALL)
             if os_language == "fr":
                 clear_console()
@@ -162,7 +209,7 @@ def run():  # Main function that runs the program
                     Fore.BLUE
                     + "-" * 100
                     + "\n"
-                    + Fore.GREEN
+                    + Fore.RED
                     + "Closing the program".center(100)
                     + Style.RESET_ALL
                 )
@@ -208,14 +255,14 @@ def run():  # Main function that runs the program
                 )
             print(Fore.BLUE + "-" * 100 + Style.RESET_ALL)
             sys.exit()
-        elif user_choice == "11":  # Display the help menu
-            clear_console()
-            print(language_functions["help"])
-            continue
+
 
 def main():  # Main function
     setup_logging()
+    ensure_extensions_file_exists()
+    ensure_folder_paths_file_exists()
     run()
+
 
 if __name__ == "__main__":  # Run the main function
     main()
