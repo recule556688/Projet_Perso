@@ -139,7 +139,7 @@ def modify_extensions():
         if int(choice) == len(extension_dicts) + 1:
             clear_console()
             break
-        elif (
+        if (
             not choice.isdigit()
             or int(choice) < 1
             or int(choice) > len(extension_dicts)
@@ -264,7 +264,7 @@ def modify_extensions():
                 print(
                     Fore.BLUE + "-" * len(str(selected_dict)) + Style.RESET_ALL + "\n"
                 )
-                log_message("info", f"Displayed all extensions.")
+                log_message("info", "Displayed all extensions.")
             elif operation == "4":  # Quit the edit menu
                 clear_console()
                 break

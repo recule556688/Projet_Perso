@@ -44,7 +44,7 @@ def run():  # Main function that runs the program
             )
             print(Fore.BLUE + "-" * 100 + Style.RESET_ALL)
             continue
-        elif user_choice == "1":  # Sort music files
+        if user_choice == "1":  # Sort music files
             sorted_flag, new_folders = sort_files(
                 Path.home() / directories_name["Music"], EXTENSIONS_MUSIC, sorted_flag
             )

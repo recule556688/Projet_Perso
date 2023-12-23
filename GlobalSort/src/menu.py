@@ -305,6 +305,7 @@ def generate_menu_edit_extensions(
 
 
 def generate_menu_choose_extensions(language):
+    i = 0
     menu_options = {
         "fr": ["Choisissez un dictionnaire d'extension à modifier:", "Sortir"],
         "en": ["Choose an extension dictionary to modify:", "Exit"],
