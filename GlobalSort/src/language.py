@@ -6,7 +6,6 @@ from .menu import (
     generate_menu_edit_extensions,
     generate_menu_edit_folder,
 )
-from .constants import folder_paths
 from colorama import Fore
 
 LANGUAGE_FUNCTIONS = {

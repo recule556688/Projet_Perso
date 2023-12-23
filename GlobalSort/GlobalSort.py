@@ -6,7 +6,6 @@ from src.constants import (
     EXTENSIONS_IMAGE,
     EXTENSIONS_DOCUMENT,
     EXTENSIONS_DOWNLOAD,
-    EXTENSIONS_PERSONNALISER,
     EXTENSIONS_ALL,
 )
 from src.logger import setup_logging
