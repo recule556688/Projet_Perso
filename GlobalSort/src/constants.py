@@ -10,8 +10,9 @@ MENU_CHOICE = [
     "9",
     "10",
     "11",
+    "12",
 ]  # List of the menu choices
-EXTENSIONS_MUSIC = {  # Dictionary to store the extensions of the Music to be sorted
+EXTENSIONS_MUSIC = {
     ".mp3": "Musique",
     ".wav": "Musique",
     ".flac": "Musique",
@@ -22,16 +23,18 @@ EXTENSIONS_MUSIC = {  # Dictionary to store the extensions of the Music to be so
     ".aiff": "Musique",
     ".ape": "Musique",
 }
-EXTENSIONS_VIDEO = {  # Dictionary to store the extensions of the Videos to be sorted
+
+EXTENSIONS_VIDEO = {
     ".mp4": "Videos",
     ".avi": "Videos",
     ".gif": "Videos",
-    "avi": "Videos",
+    ".avi": "Videos",
     ".mkv": "Videos",
     ".wmv": "Videos",
     ".mov": "Videos",
 }
-EXTENSIONS_IMAGE = {  # Dictionary to store the extensions of the Images to be sorted
+
+EXTENSIONS_IMAGE = {
     ".bmp": "Images",
     ".png": "Images",
     ".jpg": "Images",
@@ -40,42 +43,49 @@ EXTENSIONS_IMAGE = {  # Dictionary to store the extensions of the Images to be s
     ".heic": "Images",
     ".svg": "Images",
 }
-EXTENSIONS_DOCUMENT = (
-    {  # Dictionary to store the extensions of the Documents to be sorted
-        ".txt": "Documents",
-        ".pptx": "Documents",
-        ".csv": "Documents",
-        ".xls": "Documents",
-        ".odp": "Documents",
-        ".pages": "Documents",
-        ".pdf": "Documents",
-        ".doc": "Documents",
-        ".zip": "Documents",
-        ".docx": "Documents",
-    }
-)
-EXTENSIONS_DOWNLOAD = (  # Dictionary to store the extensions of the Download to be sorted
-    {}
-)
-EXTENSIONS_DOWNLOAD.update(EXTENSIONS_DOCUMENT)
-EXTENSIONS_DOWNLOAD.update(EXTENSIONS_IMAGE)
-EXTENSIONS_DOWNLOAD.update(EXTENSIONS_VIDEO)
-EXTENSIONS_DOWNLOAD.update(EXTENSIONS_MUSIC)
-EXTENSIONS_DOWNLOAD.update(
-    {
-        ".exe": "executable",
-        ".bat": "executable",
-        ".sh": "executable",
-        ".py": "executable",
-        ".pyw": "executable",
-        ".msi": "executable",
-        ".apk": "executable",
-        ".app": "executable",
-        ".deb": "executable",
-        ".rpm": "executable",
-        ".bin": "executable",
-        ".dmg": "executable",
-        ".run": "executable",
-        ".jar": "executable",
-    }
-)
+
+EXTENSIONS_DOCUMENT = {
+    ".txt": "Documents",
+    ".pptx": "Documents",
+    ".csv": "Documents",
+    ".xls": "Documents",
+    ".odp": "Documents",
+    ".pages": "Documents",
+    ".pdf": "Documents",
+    ".doc": "Documents",
+    ".zip": "Documents",
+    ".docx": "Documents",
+}
+
+EXTENSIONS_DOWNLOAD = {
+    ".exe": "executable",
+    ".bat": "executable",
+    ".sh": "executable",
+    ".py": "executable",
+    ".pyw": "executable",
+    ".msi": "executable",
+    ".apk": "executable",
+    ".app": "executable",
+    ".deb": "executable",
+    ".rpm": "executable",
+    ".bin": "executable",
+    ".dmg": "executable",
+    ".run": "executable",
+    ".jar": "executable",
+}
+
+EXTENSIONS_PERSONNALISER = {
+    ".ttf": "Fonts",
+}
+
+EXTENSIONS_ALL = {}
+# Combine all the extension dictionaries into EXTENSIONS_DOWNLOAD
+EXTENSIONS_ALL.update(EXTENSIONS_MUSIC)
+EXTENSIONS_ALL.update(EXTENSIONS_VIDEO)
+EXTENSIONS_ALL.update(EXTENSIONS_IMAGE)
+EXTENSIONS_ALL.update(EXTENSIONS_DOCUMENT)
+EXTENSIONS_ALL.update(EXTENSIONS_DOWNLOAD)
+EXTENSIONS_ALL.update(EXTENSIONS_PERSONNALISER)
+
+extension_dicts = [attr for attr in globals() if attr.startswith("EXTENSIONS_")]
+folder_paths = {}
