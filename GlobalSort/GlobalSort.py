@@ -26,7 +26,7 @@ import sys
 from colorama import Fore, Style
 
 
-def run():  # Main function that runs the program
+def main():  # Main function that runs the program
     sorted_flag = False  # Flag to keep track if any file has been moved
     sorted_folders = set()  # Set to keep track of the sorted folders
     while True:
@@ -141,7 +141,7 @@ def run():  # Main function that runs the program
             except StopIteration:
                 print("No custom folders to sort.")
             else:
-                for folder_name, folder_path in folder_paths.items():
+                for folder_path in folder_paths.items():
                     if Path(folder_path).is_dir():
                         sorted_flag, new_folders = sort_files(
                             Path(folder_path),
@@ -251,12 +251,8 @@ def run():  # Main function that runs the program
             sys.exit()
 
 
-def main():  # Main function
+if __name__ == "__main__":  # Run the main function
     setup_logging()
     ensure_extensions_file_exists()
     ensure_folder_paths_file_exists()
-    run()
-
-
-if __name__ == "__main__":  # Run the main function
     main()
