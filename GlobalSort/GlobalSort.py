@@ -136,17 +136,20 @@ def run():  # Main function that runs the program
             clear_console()
             sorted_folders.update(new_folders)
             folder_paths = load_folder_paths_from_file()
-            folder_name, folder_path = next(iter(folder_paths.items()))
-
-            for folder_name, folder_path in folder_paths.items():
-                if Path(folder_path).is_dir():
-                    sorted_flag, new_folders = sort_files(
-                        Path(folder_path),
-                        EXTENSIONS_ALL,
-                        sorted_flag,
-                    )
-                    clear_console()
-                    sorted_folders.update(new_folders)
+            try:
+                folder_name, folder_path = next(iter(folder_paths.items()))
+            except StopIteration:
+                print("No custom folders to sort.")
+            else:
+                for folder_name, folder_path in folder_paths.items():
+                    if Path(folder_path).is_dir():
+                        sorted_flag, new_folders = sort_files(
+                            Path(folder_path),
+                            EXTENSIONS_ALL,
+                            sorted_flag,
+                        )
+                        clear_console()
+                        sorted_folders.update(new_folders)
             if sorted_flag:  # Only print if any file has been moved
                 clear_console()
                 for folder in sorted_folders:
@@ -182,11 +185,6 @@ def run():  # Main function that runs the program
         elif user_choice == "11":  # Display the help menu
             clear_console()
             print(language_functions["help"])
-            folder_paths = load_folder_paths_from_file()
-            values = list(folder_paths.values())
-            print(values[0])  # prints the first value
-            print(values[1])  # prints the second value
-            continue
         elif user_choice == "12":  # Quit the program
             print(Fore.BLUE + "-" * 100 + Style.RESET_ALL)
             if os_language == "fr":
