@@ -12,6 +12,7 @@ from .constants import (
     EXTENSIONS_IMAGE,
     EXTENSIONS_MUSIC,
     EXTENSIONS_VIDEO,
+    EXTENSIONS_ALL,
     extension_dicts,
 )
 
