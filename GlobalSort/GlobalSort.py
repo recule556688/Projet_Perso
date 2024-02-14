@@ -19,6 +19,7 @@ from src.utils import (
     ensure_folder_paths_file_exists,
     modify_folder_paths,
     load_folder_paths_from_file,
+    ensure_log_file_exists,
 )
 from src.undo import undo_all_operations
 from pathlib import Path
@@ -141,7 +142,7 @@ def main():  # Main function that runs the program
             except StopIteration:
                 print("No custom folders to sort.")
             else:
-                for folder_path in folder_paths.items():
+                for folder_name, folder_path in folder_paths.items():
                     if Path(folder_path).is_dir():
                         sorted_flag, new_folders = sort_files(
                             Path(folder_path),
@@ -252,6 +253,7 @@ def main():  # Main function that runs the program
 
 
 if __name__ == "__main__":  # Run the main function
+    ensure_log_file_exists()
     setup_logging()
     ensure_extensions_file_exists()
     ensure_folder_paths_file_exists()

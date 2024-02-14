@@ -305,6 +305,13 @@ def ensure_folder_paths_file_exists():
             json.dump(folder_paths, f, indent=4)
 
 
+def ensure_log_file_exists():
+    log_file = Path("User_Files/file_sorter.log")
+    if not log_file.exists():
+        log_file.parent.mkdir(parents=True, exist_ok=True)
+        log_file.touch()
+
+
 def modify_folder_paths():
     clear_console()
     while True:
