@@ -12,6 +12,7 @@ from .constants import (
     EXTENSIONS_IMAGE,
     EXTENSIONS_MUSIC,
     EXTENSIONS_VIDEO,
+    EXTENSIONS_ALL,
     extension_dicts,
 )
 
@@ -263,11 +264,10 @@ def modify_extensions():
                     )
             elif operation == "3":  # Display all extensions
                 clear_console()
-                print(Fore.BLUE + "-" * len(str(selected_dict)) + Style.RESET_ALL)
-                print(Fore.BLUE + str(selected_dict) + Style.RESET_ALL)
-                print(
-                    Fore.BLUE + "-" * len(str(selected_dict)) + Style.RESET_ALL + "\n"
-                )
+                print(Fore.GREEN + "-" * 100 + Style.RESET_ALL)
+                for extension, filetype in selected_dict.items():
+                    print(Fore.GREEN + f"{extension}: {filetype}" + Style.RESET_ALL)
+                print(Fore.GREEN + "-" * 100 + "\n" + Style.RESET_ALL)
                 log_message("info", "Displayed all extensions.")
             elif operation == "4":  # Quit the edit menu
                 clear_console()
