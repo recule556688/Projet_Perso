@@ -37,9 +37,14 @@ def sort_files(directory, extensions, sorted_flag):  # Add sorted as an argument
         ):  # Check if the file is not in the correct folder
             if fichier_cible.exists():
                 print(
-                    f"File {fichier_cible} already exists in the destination directory"
+                    f"File {fichier_cible} already exists in {dossier_cible_absolu}"
                 )
-                log_message("info", messages["file_exists"].format(dst=fichier_cible))
+                log_message(
+                    "info",
+                    messages["file_exists"].format(
+                        file=fichier_cible, directory=dossier_cible_absolu
+                    ),
+                )
             else:
                 try:
                     dossier_cible_absolu.mkdir(parents=True, exist_ok=True)

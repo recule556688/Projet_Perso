@@ -118,6 +118,7 @@ LOG_MESSAGES = {  # Map log messages to the correct language
         "no_operation_to_cancel": "There is no operation to cancel.",
         "console_cleared": "Console cleared",
         "extension_not_found": "Extension not found",
+        "file_exists": "The file {file} already exists in {directory}",
     },
     "fr": {
         "dir_not_exist": "Le répertoire {directory} n'existe pas.",
@@ -127,6 +128,7 @@ LOG_MESSAGES = {  # Map log messages to the correct language
         "no_operation_to_cancel": "Il n'y a aucune opération à annuler.",
         "console_cleared": "Console effacée",
         "extension_not_found": "Extension non trouvée",
+        "file_exists": "Le fichier {file} existe déjà dans {directory}",
     },
     "es": {
         "dir_not_exist": "El directorio {directory} no existe.",
@@ -136,6 +138,7 @@ LOG_MESSAGES = {  # Map log messages to the correct language
         "no_operation_to_cancel": "No hay operación para cancelar.",
         "console_cleared": "Consola borrada",
         "extension_not_found": "Extensión no encontrada",
+        "file_exists": "El archivo {file} ya existe en {directory}",
     },
     "it": {
         "dir_not_exist": "La directory {directory} non esiste.",
@@ -145,6 +148,7 @@ LOG_MESSAGES = {  # Map log messages to the correct language
         "no_operation_to_cancel": "Non c'è alcuna operazione da annullare.",
         "console_cleared": "Console cancellata",
         "extension_not_found": "Estensione non trovata",
+        "file_exists": "Il file {file} esiste già in {directory}",
     },
     "de": {
         "dir_not_exist": "Das Verzeichnis {directory} existiert nicht.",
@@ -154,6 +158,7 @@ LOG_MESSAGES = {  # Map log messages to the correct language
         "no_operation_to_cancel": "Es gibt keine Operation zum Abbrechen.",
         "console_cleared": "Konsole gelöscht",
         "extension_not_found": "Erweiterung nicht gefunden",
+        "file_exists": "Die Datei {file} existiert bereits in {directory}",
     },
     "ru": {
         "dir_not_exist": "Каталог {directory} не существует.",
@@ -163,6 +168,7 @@ LOG_MESSAGES = {  # Map log messages to the correct language
         "no_operation_to_cancel": "Нет операции для отмены.",
         "console_cleared": "Консоль очищена",
         "extension_not_found": "Расширение не найдено",
+        "file_exists": "Файл {file} уже существует в {directory}",
     },
 }
 # Get the user's operating system language

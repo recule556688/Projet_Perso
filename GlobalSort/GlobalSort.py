@@ -50,18 +50,81 @@ def main():  # Main function that runs the program
             )
             clear_console()
             sorted_folders.update(new_folders)
+            if sorted_flag:  # Only print if any file has been moved
+                for folder in sorted_folders:
+                    print(
+                        Fore.BLUE
+                        + "{}\n".format("-" * 100)
+                        + Fore.BLUE
+                        + "{}".format(
+                            messages["file_sorted"]
+                            .format(directory=folder)
+                            .center(100),
+                        )
+                        + Style.RESET_ALL
+                    )
+            else:  # Print a different message if no files have been moved
+                print(
+                    Fore.BLUE
+                    + "{}\n".format("-" * 100)
+                    + Fore.RED
+                    + "{}".format("No files were moved.".center(100))
+                    + Style.RESET_ALL
+                )
         elif user_choice == "2":  # Sort video files
             sorted_flag, new_folders = sort_files(
                 Path.home() / directories_name["Videos"], EXTENSIONS_VIDEO, sorted_flag
             )
             clear_console()
             sorted_folders.update(new_folders)
+            if sorted_flag:  # Only print if any file has been moved
+                for folder in sorted_folders:
+                    print(
+                        Fore.BLUE
+                        + "{}\n".format("-" * 100)
+                        + Fore.BLUE
+                        + "{}".format(
+                            messages["file_sorted"]
+                            .format(directory=folder)
+                            .center(100),
+                        )
+                        + Style.RESET_ALL
+                    )
+            else:  # Print a different message if no files have been moved
+                print(
+                    Fore.BLUE
+                    + "{}\n".format("-" * 100)
+                    + Fore.RED
+                    + "{}".format("No files were moved.".center(100))
+                    + Style.RESET_ALL
+                )
         elif user_choice == "3":  # Sort image files
             sorted_flag, new_folders = sort_files(
                 Path.home() / directories_name["Images"], EXTENSIONS_IMAGE, sorted_flag
             )
             clear_console()
             sorted_folders.update(new_folders)
+            if sorted_flag:  # Only print if any file has been moved
+                for folder in sorted_folders:
+                    print(
+                        Fore.BLUE
+                        + "{}\n".format("-" * 100)
+                        + Fore.BLUE
+                        + "{}".format(
+                            messages["file_sorted"]
+                            .format(directory=folder)
+                            .center(100),
+                        )
+                        + Style.RESET_ALL
+                    )
+            else:  # Print a different message if no files have been moved
+                print(
+                    Fore.BLUE
+                    + "{}\n".format("-" * 100)
+                    + Fore.RED
+                    + "{}".format("No files were moved.".center(100))
+                    + Style.RESET_ALL
+                )
         elif user_choice == "4":  # Sort document files
             sorted_flag, new_folders = sort_files(
                 Path.home() / directories_name["Documents"],
@@ -70,6 +133,27 @@ def main():  # Main function that runs the program
             )
             clear_console()
             sorted_folders.update(new_folders)
+            if sorted_flag:  # Only print if any file has been moved
+                for folder in sorted_folders:
+                    print(
+                        Fore.BLUE
+                        + "{}\n".format("-" * 100)
+                        + Fore.BLUE
+                        + "{}".format(
+                            messages["file_sorted"]
+                            .format(directory=folder)
+                            .center(100),
+                        )
+                        + Style.RESET_ALL
+                    )
+            else:  # Print a different message if no files have been moved
+                print(
+                    Fore.BLUE
+                    + "{}\n".format("-" * 100)
+                    + Fore.RED
+                    + "{}".format("No files were moved.".center(100))
+                    + Style.RESET_ALL
+                )
         elif user_choice == "5":  # Sort download files
             sorted_flag, new_folders = sort_files(
                 Path.home() / directories_name["Downloads"],
@@ -78,6 +162,27 @@ def main():  # Main function that runs the program
             )
             clear_console()
             sorted_folders.update(new_folders)
+            if sorted_flag:  # Only print if any file has been moved
+                for folder in sorted_folders:
+                    print(
+                        Fore.BLUE
+                        + "{}\n".format("-" * 100)
+                        + Fore.BLUE
+                        + "{}".format(
+                            messages["file_sorted"]
+                            .format(directory=folder)
+                            .center(100),
+                        )
+                        + Style.RESET_ALL
+                    )
+            else:  # Print a different message if no files have been moved
+                print(
+                    Fore.BLUE
+                    + "{}\n".format("-" * 100)
+                    + Fore.RED
+                    + "{}".format("No files were moved.".center(100))
+                    + Style.RESET_ALL
+                )
         elif user_choice == "6":  # Sort a specific folder
             try:
                 print(Fore.BLUE + "{}".format("-" * 100) + Style.RESET_ALL)
@@ -104,6 +209,27 @@ def main():  # Main function that runs the program
                 )
                 clear_console()
                 sorted_folders.update(new_folders)
+                if sorted_flag:  # Only print if any file has been moved
+                    for folder in sorted_folders:
+                        print(
+                            Fore.BLUE
+                            + "{}\n".format("-" * 100)
+                            + Fore.BLUE
+                            + "{}".format(
+                                messages["file_sorted"]
+                                .format(directory=folder)
+                                .center(100),
+                            )
+                            + Style.RESET_ALL
+                        )
+                else:  # Print a different message if no files have been moved
+                    print(
+                        Fore.BLUE
+                        + "{}\n".format("-" * 100)
+                        + Fore.RED
+                        + "{}".format("No files were moved.".center(100))
+                        + Style.RESET_ALL
+                    )
             except Exception as e:
                 print(Fore.RED + f"An error occurred: {e}" + Style.RESET_ALL)
         elif user_choice == "7":  # Sort all the directories
