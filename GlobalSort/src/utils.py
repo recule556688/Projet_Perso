@@ -37,9 +37,7 @@ def sort_files(directory, extensions, sorted_flag):  # Add sorted as an argument
             file.parent != dossier_cible_absolu
         ):  # Check if the file is not in the correct folder
             if fichier_cible.exists():
-                print(
-                    f"File {fichier_cible} already exists in {dossier_cible_absolu}"
-                )
+                print(f"File {fichier_cible} already exists in {dossier_cible_absolu}")
                 log_message(
                     "info",
                     messages["file_exists"].format(
