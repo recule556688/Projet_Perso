@@ -92,7 +92,7 @@ git clone https://github.com/recule556688/Projet_Perso.git
 2. Navigate to the project's directory:
 
 ```bash
-cd Global_Sort
+cd GlobalSort
 ```
 3. Install the required packages:
 ```py
