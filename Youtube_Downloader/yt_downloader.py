@@ -2,6 +2,9 @@ import sys
 import os
 import platform
 import tkinter as tk
+import requests
+from PIL import Image, ImageTk
+from io import BytesIO
 from pytube import YouTube, exceptions
 from customtkinter import (
     CTk,
