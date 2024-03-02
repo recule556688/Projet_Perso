@@ -1,7 +1,7 @@
 import sys
 import os
+import platform
 import tkinter as tk
-from tkinter import font
 import requests
 from PIL import Image, ImageTk
 from io import BytesIO
@@ -12,7 +12,6 @@ from customtkinter import (
     CTkEntry,
     CTkProgressBar,
     CTkButton,
-    CTkFrame,
     set_appearance_mode,
     set_default_color_theme,
 )
@@ -20,8 +19,9 @@ from customtkinter import (
 # Get the directory of the executable
 base_dir = getattr(sys, "_MEIPASS", os.path.dirname(os.path.abspath(__file__)))
 
-# Construct the path to the icon file
-icon_path = os.path.join(base_dir, "app.ico")
+# Construct the path to the icon files
+icon_path_ico = os.path.join(base_dir, "app.ico")
+icon_path_xbm = os.path.join(base_dir, "app.xbm")
 
 # Constants
 WINDOW_GEOMETRY = "1600x900"
@@ -31,7 +31,14 @@ IMAGE_SIZE = (500, int(500 / 16 * 9))
 app = CTk()
 app.geometry(WINDOW_GEOMETRY)
 app.title("YouTube Downloader")
-app.iconbitmap(icon_path)
+
+# Check the operating system
+if platform.system() == "Windows":
+    # On Windows, use the .ico file directly
+    app.iconbitmap(icon_path_ico)
+elif platform.system() == "Linux":
+    # On Linux, use the .xbm file directly
+    app.iconbitmap("@{}".format(icon_path_xbm))
 
 # Thumbnail label
 thumbnail_label = tk.Label(
