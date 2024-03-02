@@ -48,7 +48,7 @@ def startDownload():
         download_button.configure(
             state="disabled",
             text="Downloading...",
-            text_color="red",
+            text_color="green",
             font=("Helvetica", 12, "bold"),
         )
 
