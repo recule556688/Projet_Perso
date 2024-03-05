@@ -6,7 +6,6 @@ import requests
 from PIL import Image, ImageTk
 from io import BytesIO
 from pytube import YouTube, exceptions
-import zipfile
 from customtkinter import (
     CTk,
     CTkLabel,
@@ -19,6 +18,11 @@ from customtkinter import (
 
 # Get the directory of the executable
 base_dir = getattr(sys, "_MEIPASS", os.path.dirname(os.path.abspath(__file__)))
+# Get the directory of the script
+script_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Define the base directory as the Applications folder in the script directory
+root_dir = os.path.join(script_dir, "Applications")
 
 # Construct the path to the icon files
 icon_path_ico = os.path.join(base_dir, "app.ico")
@@ -65,9 +69,12 @@ def update_app():
         with open(exe_name, "wb") as f:
             f.write(response.content)
 
-        # Replace the old .exe with the new one
-        os.remove("myapp.exe")
-        os.rename(exe_name, "myapp.exe")
+        # Rename the new downloaded version with its version number
+        new_exe_name = "YoutubeDownloader " + latest_version + ".exe"
+        os.rename(exe_name, new_exe_name)
+
+        # Move the new downloaded version to Applications folder in the current directory
+        os.replace(new_exe_name, os.path.join(root_dir, new_exe_name))
 
         # Update the version number in the local version.txt file
         with open("version.txt", "w") as f:
@@ -77,7 +84,7 @@ def update_app():
 # Our app window
 app = CTk()
 app.geometry(WINDOW_GEOMETRY)
-app.title("YouTube Downloader")
+app.title("YouTube Downloader" + " v" + open("version.txt", "r").read().strip())
 
 # Check the operating system
 if platform.system() == "Windows":
@@ -244,6 +251,8 @@ views_label.pack(padx=10, pady=10)
 duration_label = CTkLabel(app, text="")
 duration_label.pack(padx=10, pady=10)
 
-
-# Run the app
-app.mainloop()
+if __name__ == "__main__":
+    # Update the app
+    update_app()
+    # Run the app
+    app.mainloop()
