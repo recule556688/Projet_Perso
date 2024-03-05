@@ -6,6 +6,7 @@ import requests
 from PIL import Image, ImageTk
 from io import BytesIO
 from pytube import YouTube, exceptions
+import zipfile
 from customtkinter import (
     CTk,
     CTkLabel,
@@ -26,6 +27,52 @@ icon_path_xbm = os.path.join(base_dir, "app.xbm")
 # Constants
 WINDOW_GEOMETRY = "1600x900"
 IMAGE_SIZE = (500, int(500 / 16 * 9))
+
+
+# Auto update function
+def update_app():
+    # GitHub API URL for your repository
+    api_url = "https://api.github.com/repos/recule556688/Projet_Perso/releases/latest"
+
+    # Get the latest release info
+    response = requests.get(api_url)
+    data = response.json()
+
+    # Get the latest version number
+    latest_version = data["tag_name"]
+
+    # Get the current version number
+    with open("version.txt", "r") as f:
+        current_version = f.read().strip()
+
+    # If the latest version is newer than the current version
+    if latest_version > current_version:
+        # Get the URL and name of the .exe file for the latest release
+        exe_url = None
+        exe_name = None
+        for asset in data["assets"]:
+            if asset["name"].endswith(".exe"):
+                exe_url = asset["browser_download_url"]
+                exe_name = asset["name"]
+                break
+
+        if exe_url is None:
+            print("No new update found in the latest release.")
+            return
+
+        # Download the latest version of the application
+        response = requests.get(exe_url)
+        with open(exe_name, "wb") as f:
+            f.write(response.content)
+
+        # Replace the old .exe with the new one
+        os.remove("myapp.exe")
+        os.rename(exe_name, "myapp.exe")
+
+        # Update the version number in the local version.txt file
+        with open("version.txt", "w") as f:
+            f.write(latest_version)
+
 
 # Our app window
 app = CTk()
