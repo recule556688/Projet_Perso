@@ -38,12 +38,12 @@ def update_program(): # Function to update the program
         subprocess.run(["git", "-C", repo_path, "fetch"], check=True)
 
         # Check if there are any differences between the local and remote repositories
-        diff_output = subprocess.check_output(["git", "-C", repo_path, "diff", "--stat", "origin/main"]).strip()
+        diff_output = subprocess.check_output(["git", "-C", repo_path, "diff", "--stat", "HEAD..origin/main"]).strip()
 
         if diff_output:
-            print("Updates are available. Do you want to update? (yes/no)")
+            print("Updates are available. Do you want to update? (Y/n)")
             choice = input().lower()
-            if choice == 'yes':
+            if choice == 'Y' or choice == '':
                 if platform.system() == "Windows":
                     subprocess.check_call(["git", "-C", repo_path, "pull"])
                 else:
@@ -60,7 +60,20 @@ def update_program(): # Function to update the program
                 print(Fore.BLUE + "-" * 100 + Style.RESET_ALL)
                 sys.exit(0)
         else:
-            print("No updates available.")
+            print(Fore.GREEN + "-" * 100 + Style.RESET_ALL)
+            print(Fore.GREEN + "No updates available.".center(100) + Style.RESET_ALL)
+            print('\n')
+            print(
+                Fore.GREEN
+                + "{}".format("Starting the program...".center(100))
+                + Style.RESET_ALL
+            )
+            print(Fore.GREEN + "-" * 100 + Style.RESET_ALL)
+            ensure_log_file_exists()
+            setup_logging()
+            ensure_extensions_file_exists()
+            ensure_folder_paths_file_exists()
+            main()
     except Exception as e:
         print(Fore.RED + f"An error occurred: {e}" + Style.RESET_ALL)
 
@@ -417,8 +430,3 @@ def main():  # Main function that runs the program
 
 if __name__ == "__main__":  # Run the main function
     update_program()
-    # ensure_log_file_exists()
-    # setup_logging()
-    # ensure_extensions_file_exists()
-    # ensure_folder_paths_file_exists()
-    # main()
