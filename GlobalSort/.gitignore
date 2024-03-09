@@ -1,7 +1,5 @@
 # Custom Files
-./User_Files/file_sorter.log
-./User_Files/extensions.json
-./User_Files/folder_paths.json
+User_Files
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
