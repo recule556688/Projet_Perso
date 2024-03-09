@@ -25,7 +25,44 @@ from src.undo import undo_all_operations
 from pathlib import Path
 import sys
 from colorama import Fore, Style
+import sys
+import subprocess
+import platform
 
+def update_program(): # Function to update the program
+    try:
+        # Get the path to the top-level directory of the current Git repository
+        repo_path = subprocess.check_output(["git", "rev-parse", "--show-toplevel"]).strip().decode('utf-8')
+
+        # Fetch the latest changes from the remote repository
+        subprocess.run(["git", "-C", repo_path, "fetch"], check=True)
+
+        # Check if there are any differences between the local and remote repositories
+        diff_output = subprocess.check_output(["git", "-C", repo_path, "diff", "--stat", "origin/main"]).strip()
+
+        if diff_output:
+            print("Updates are available. Do you want to update? (yes/no)")
+            choice = input().lower()
+            if choice == 'yes':
+                if platform.system() == "Windows":
+                    subprocess.check_call(["git", "-C", repo_path, "pull"])
+                else:
+                    subprocess.run(["git", "-C", repo_path, "pull"], check=True)
+
+                print(Fore.BLUE + "-" * 100 + Style.RESET_ALL)
+                print(
+                    Fore.BLUE
+                    + "{}".format(
+                        "The program has been updated. Please restart the program.".center(100)
+                    )
+                    + Style.RESET_ALL
+                )
+                print(Fore.BLUE + "-" * 100 + Style.RESET_ALL)
+                sys.exit(0)
+        else:
+            print("No updates available.")
+    except Exception as e:
+        print(Fore.RED + f"An error occurred: {e}" + Style.RESET_ALL)
 
 def main():  # Main function that runs the program
     sorted_flag = False  # Flag to keep track if any file has been moved
@@ -379,8 +416,9 @@ def main():  # Main function that runs the program
 
 
 if __name__ == "__main__":  # Run the main function
-    ensure_log_file_exists()
-    setup_logging()
-    ensure_extensions_file_exists()
-    ensure_folder_paths_file_exists()
-    main()
+    update_program()
+    # ensure_log_file_exists()
+    # setup_logging()
+    # ensure_extensions_file_exists()
+    # ensure_folder_paths_file_exists()
+    # main()
