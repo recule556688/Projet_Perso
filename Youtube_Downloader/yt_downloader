@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import sys
 import os
 import platform
@@ -28,6 +29,9 @@ root_dir = os.path.join(script_dir, "Applications")
 icon_path_ico = os.path.join(base_dir, "app.ico")
 icon_path_xbm = os.path.join(base_dir, "app.xbm")
 
+# Construct the path to the version file
+version_file_path = os.path.join(script_dir, "version.txt")
+
 # Constants
 WINDOW_GEOMETRY = "1600x900"
 IMAGE_SIZE = (500, int(500 / 16 * 9))
@@ -46,7 +50,7 @@ def update_app():
     latest_version = data["tag_name"]
 
     # Get the current version number
-    with open("version.txt", "r") as f:
+    with open(version_file_path, "r") as f:
         current_version = f.read().strip()
 
     # If the latest version is newer than the current version
@@ -84,7 +88,7 @@ def update_app():
 # Our app window
 app = CTk()
 app.geometry(WINDOW_GEOMETRY)
-app.title("YouTube Downloader" + " v" + open("version.txt", "r").read().strip())
+app.title("YouTube Downloader" + " v" + open(version_file_path, "r").read().strip())
 
 # Check the operating system
 if platform.system() == "Windows":
