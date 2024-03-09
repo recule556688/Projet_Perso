@@ -39,7 +39,14 @@ def update_program():  # Function to update the program
             .decode("utf-8")
         )
     except subprocess.CalledProcessError:
-        print("Not in a Git repository. Skipping update and continuing execution.")
+        print(Fore.RED + "-" * 100 + Style.RESET_ALL)
+        print(
+            Fore.RED
+            + "{}".format(
+                "Not in the Project Github repository. Skipping update and continuing execution.".center(100)
+            )
+            + Style.RESET_ALL
+        )
         launch_program()
     try:
         # Fetch the latest changes from the remote repository
