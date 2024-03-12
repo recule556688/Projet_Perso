@@ -9,30 +9,30 @@
 
 ---
 
-🗂️ GlobalSort is a Python-based utility tool designed to organize files in your computer's directories...
+### 🗂️ GlobalSort is a Python-based utility tool designed to organize files in your computer's directories...
 
 ## 📚 Table of Contents
 
-- [📖 About](#about)
-- [🚀 Getting Started](#getting-started)
-- [🌟 Features](#features)
-- [Supported Extensions](#supported-extensions)
-- [Supported Languages](#supported-languages)
-- [Installation](#installation)
-- [Usage](#usage)
-- [📝 License](#license)
+- [📘 About](#-about)
+- [🏁 Getting Started](#-getting-started)
+- [⭐ Features](#-features)
+- [🔌 Supported Extensions](#-supported-extensions)
+- [🌍 Supported Languages](#-supported-languages)
+- [💿 Installation](#-installation)
+- [🖥️ Usage](#-usage)
+- [📜 License](#-license)
 
 ## 📖 About
 
-"GlobalSort is my first project developed in Python. I decided to create this powerful file organization tool as a means to learn Python and simultaneously find a solution to organize my files efficiently."
+```plaintext
+- "GlobalSort is my first project developed in Python. I decided to create this powerful file organization tool as a means to learn Python and simultaneously find a solution to organize my files efficiently."
+```
 
-## 🚀 Getting Started
+## ⭐ Features
 
-These instructions will get you a copy of the project up and running on your local machine.
+### GlobalSort automatically updates at launch to ensure you always have the latest features and improvements
 
-## 🌟 Features
-
-This tool allows you to:
+#### The tool provides a menu with the following options
 
 - Sort music files
 - Sort video files
@@ -41,11 +41,18 @@ This tool allows you to:
 - Sort download files
 - Sort files from a specific directory
 - Sort all directories
+- Edit the folders of the sorting program
+- Edit the extensions of the sorting program
 - Undo last operation
-- Display a helping menu
+- Display the help menu
 - Quit the program
 
-## Supported Extensions
+## 🚀 Getting Started
+
+- These instructions will guide you through the process of setting up and running the GlobalSort
+    project on your local machine.
+
+## 🔌 Supported Extensions
 
 ### 🎵 Music
 
@@ -69,47 +76,67 @@ This tool allows you to:
 
     .exe, .bat, .sh, .py, .pyw, .msi, .apk, .app, .deb, .rpm, .bin, .dmg, .run, .jar
 
-## 🌐 Supported Languages
+### 🛠️ And now custom extensions customisable by the user
 
-The program currently supports the following languages:
+- With the new update, you can now add your own extensions to the program.
+
+  - To do so, simply select option 9 in the main menu and follow the instructions. You can add as many extensions as you want and they will be saved in a file called "extensions.json" in the "User_files" folder. The program will then read the file and add the extensions to the list of extensions to sort.
+
+## 🌍 Supported Languages
+
+### The program currently supports the following languages
+
+#### the languages is automatically detected by the system and the program will display the language in the corresponding language your system is set to and if the language is not supported the program will display in English
 
 - 🇬🇧 English
 - 🇫🇷 French
 - 🇪🇸 Spanish
 - 🇩🇪 German
 - 🇮🇹 Italian
+- 🇷🇺 Russian
 
-## Prerequisites
+## 💿 Installation
 
-- Git. You can download Git from its [official website](https://git-scm.com/downloads).
-- Python 3.6 or higher. You can download Python from the [official website](https://www.python.org/downloads/).
-## Installation
+### Prerequisites
+
+- You have installed [Git](https://git-scm.com/downloads).
+- You have installed Python 3.11.6. You can download it from the [official website](https://www.python.org/downloads/).
+
+### Installation Steps
+
 1. Clone the repository to your local machine:
 
-```bash
-git clone https://github.com/recule556688/Projet_Perso.git
-```
+    ```bash
+    git clone https://github.com/recule556688/Projet_Perso.git
+    ```
+
 2. Navigate to the project's directory:
 
-```bash
-cd GlobalSort
-```
+    ```bash
+    cd GlobalSort
+    ```
+
 3. Install the required packages:
-```py
-pip install -r requirements.txt
-```
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
 4. Run the program:
-```python
-python GlobalSort.py
-```
-## Usage
+
+    ```bash
+    python GlobalSort.py
+    ```
+
+## 🖥️ Usage
 
 ```py
 python GlobalSort.py
 ```
- <img src="./Assets/usage.gif" alt="Usage Gif" />
 
-## 📝 License
+![Usage Gif](./Assets/usage.gif)
+
+## 📜 License
 
 This project is under license from MIT. For more details, see the [LICENSE](LICENSE) file.
 
