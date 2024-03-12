@@ -43,7 +43,9 @@ def update_program():  # Function to update the program
         print(
             Fore.RED
             + "{}".format(
-                "Not in the Project Github repository. Skipping update and continuing execution.".center(100)
+                "Not in the Project Github repository. Skipping update and continuing execution.".center(
+                    100
+                )
             )
             + Style.RESET_ALL
         )
