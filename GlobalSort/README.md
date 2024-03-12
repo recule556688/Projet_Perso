@@ -24,9 +24,7 @@
 
 ## 📖 About
 
-```plaintext
 - "GlobalSort is my first project developed in Python. I decided to create this powerful file organization tool as a means to learn Python and simultaneously find a solution to organize my files efficiently."
-```
 
 ## ⭐ Features
 
