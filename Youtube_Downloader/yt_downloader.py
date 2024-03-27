@@ -66,7 +66,11 @@ def update_app():
             f.write(response.content)
 
         # Rename the new downloaded version with its version number
-        new_file_name = "YoutubeDownloader " + latest_version + (".exe" if platform.system() == "Windows" else "")
+        new_file_name = (
+            "YoutubeDownloader "
+            + latest_version
+            + (".exe" if platform.system() == "Windows" else "")
+        )
         Path(file_name).rename(new_file_name)
 
         # Move the new downloaded version to Applications folder in the current directory
@@ -125,6 +129,7 @@ canvas = Canvas(
 
 canvas.place(x=0, y=0)
 
+
 def on_progress(stream, _, bytes_remaining):
     total_size = stream.filesize
     bytes_downloaded = total_size - bytes_remaining
@@ -153,10 +158,22 @@ def StartDownload():
 
         # Update the text items with video information
         window.after(1, lambda: update_text(title_id, "Video Title: " + ytObject.title))
-        window.after(1, lambda: update_text(author_id, "Author of the Video: " + ytObject.author))
-        window.after(1, lambda: update_text(publish_date_id, "Publish Date: " + str(ytObject.publish_date)))
+        window.after(
+            1, lambda: update_text(author_id, "Author of the Video: " + ytObject.author)
+        )
+        window.after(
+            1,
+            lambda: update_text(
+                publish_date_id, "Publish Date: " + str(ytObject.publish_date)
+            ),
+        )
         window.after(1, lambda: update_text(views_id, "Views: " + str(ytObject.views)))
-        window.after(1, lambda: update_text(length_id, f"Duration: {minutes} minutes {seconds} seconds"))
+        window.after(
+            1,
+            lambda: update_text(
+                length_id, f"Duration: {minutes} minutes {seconds} seconds"
+            ),
+        )
 
         video = ytObject.streams.get_highest_resolution()
         video.download(output_path=select_path())
@@ -241,6 +258,7 @@ progressBar.place(x=39, y=244, width=641, height=10)
 def select_path():
     output_path = filedialog.askdirectory()  # opens dialog to select directory
     return output_path
+
 
 if __name__ == "__main__":
     # Update the Application
