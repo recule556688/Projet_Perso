@@ -36,19 +36,19 @@ Welcome to my repository of personal projects, developed during my tenure in Fra
 
 ## ✨ Projects
 
-### 📁 [GlobalSort](https://github.com/recule556688/Projet_Perso/tree/main/GlobalSort)
+### 📁 [GlobalSort](https://github.com/recule556688/Global_Sort)
 
 GlobalSort is my first foray into Python development. It's a robust file organization tool that I created to learn Python and find an efficient solution for file organization. This project is a testament to my ability to create practical solutions and my passion for learning new technologies.
 
-### 🎥 [YoutubeDownloader](https://github.com/recule556688/Projet_Perso/tree/main/Youtube_Downloader)
+### 🎥 [YoutubeDownloader](https://github.com/recule556688/Youtube_Downloader)
 
 YoutubeDownloader is a user-friendly YouTube video downloader. Built with Python, it leverages the [Pytube](https://pypi.org/project/pytube/) library and [Tkinter](https://docs.python.org/3/library/tkinter.html) for the GUI. It allows users to download and save videos from YouTube, providing video information such as the author, publish date, views, thumbnail, and duration. This project showcases my skills in creating intuitive GUIs and working with APIs.
 
 ## 🚀 Technologies
 
-### The following librairies were used in these projects:
+### The following librairies were used in these projects
 
-The following tools were used in the [GlobalSort](#globalsort)
+The following tools were used in the [GlobalSort](#global_sort) project.
 
 - 🐍 [Python](https://www.python.org/)
 - 📦 [Shutil](https://docs.python.org/3/library/shutil.html)
@@ -56,12 +56,11 @@ The following tools were used in the [GlobalSort](#globalsort)
 - 📝 [Logging](https://docs.python.org/3/library/logging.html)
 - 🌐 [Locale](https://docs.python.org/3/library/locale.html)
 
-The following tools were used in the [YoutubeDownloader](#youtubedownloader)
+The following tools were used in the [YoutubeDownloader](#youtube-downloader)
 
 - 🐍 [Python](https://www.python.org/)
 - 📺 [Pytube](https://pypi.org/project/pytube/)
 - 🖼️ [Tkinter](https://docs.python.org/3/library/tkinter.html)
-- 🎨 [CustomTkinter](https://pypi.org/project/customtkinter/)
 
 ## 📝 License
 

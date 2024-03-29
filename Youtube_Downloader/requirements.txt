@@ -1,3 +1,0 @@
-pytube
-Pillow
-requests
