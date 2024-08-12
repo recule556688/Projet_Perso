@@ -20,7 +20,7 @@
   </tr>
 </table>
 
-<div align="center" style="display: flex; align-items: center; justify-content: center;">
+<p align="center">
 <p>
 <a href="#about">About</a> |
 <a href="#projects">Projects</a> |
@@ -40,15 +40,26 @@ Welcome to my repository of personal projects, developed during my tenure in Fra
 
 GlobalSort is my first foray into Python development. It's a robust file organization tool that I created to learn Python and find an efficient solution for file organization. This project is a testament to my ability to create practical solutions and my passion for learning new technologies.
 
+### 📁 [GlobalSort GUI](https://github.com/recule556688/GlobalSort_GUI)
+
+GlobalSort GUI is an evolution of the original GlobalSort project, introducing a user-friendly graphical interface for file organization. Built with Python, this tool allows users to sort and manage files easily, with support for various file types, custom folders, and extensions. The GUI version also features automatic updates, ensuring you always have the latest enhancements at your fingertips.
+
+#### Features:
+
+- Sort music, video, image, document, and download files.
+- Customize folders and extensions for sorting.
+- Undo last operation.
+- Modern and user-friendly GUI with automatic updates.
+
 ### 🎥 [YoutubeDownloader](https://github.com/recule556688/Youtube_Downloader)
 
 YoutubeDownloader is a user-friendly YouTube video downloader. Built with Python, it leverages the [Pytube](https://pypi.org/project/pytube/) library and [Tkinter](https://docs.python.org/3/library/tkinter.html) for the GUI. It allows users to download and save videos from YouTube, providing video information such as the author, publish date, views, thumbnail, and duration. This project showcases my skills in creating intuitive GUIs and working with APIs.
 
 ## 🚀 Technologies
 
-### The following librairies were used in these projects
+### The following libraries were used in these projects
 
-The following tools were used in the [GlobalSort](#global_sort) project.
+The following tools were used in the [GlobalSort](https://github.com/recule556688/Global_Sort) project.
 
 - 🐍 [Python](https://www.python.org/)
 - 📦 [Shutil](https://docs.python.org/3/library/shutil.html)
@@ -56,7 +67,16 @@ The following tools were used in the [GlobalSort](#global_sort) project.
 - 📝 [Logging](https://docs.python.org/3/library/logging.html)
 - 🌐 [Locale](https://docs.python.org/3/library/locale.html)
 
-The following tools were used in the [YoutubeDownloader](#youtube-downloader)
+The following tools were used in the [GlobalSort GUI](https://github.com/recule556688/GlobalSort_GUI.git) project.
+
+- 🐍 [Python](https://www.python.org/)
+- 🖥️ [PyQt5](https://pypi.org/project/PyQt5/)
+- 🌐 [Requests](https://pypi.org/project/requests/)
+- 🔄 [Shutil](https://docs.python.org/3/library/shutil.html)
+- 📂 [Path](https://docs.python.org/3/library/pathlib.html)
+- 📝 [Logging](https://docs.python.org/3/library/logging.html)
+
+The following tools were used in the [YoutubeDownloader](https://github.com/recule556688/Youtube_Downloader.git) project.
 
 - 🐍 [Python](https://www.python.org/)
 - 📺 [Pytube](https://pypi.org/project/pytube/)
@@ -68,4 +88,4 @@ This project is under license from MIT. For more details, see the [LICENSE](LICE
 
 Made with ❤️ by [Karma](https://github.com/recule556688)
 
-[Back to top](#top)
+[⬆️ Back to Top](#projet-perso)
